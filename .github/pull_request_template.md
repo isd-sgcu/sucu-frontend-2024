@@ -1,4 +1,5 @@
 ### Type of Change
+
 - [ ] New features
 - [ ] Bug fixes
 - [ ] Breaking changes
@@ -7,8 +8,9 @@
 - [ ] Other (please specify):
 
 ## Description
+
 <!-- what did you do ? -->
 
 ## Screenshots or GIFs (if applicable)
-<!-- Add any relevant screenshots or GIFs that demonstrate the changes made. -->
 
+<!-- Add any relevant screenshots or GIFs that demonstrate the changes made. -->
