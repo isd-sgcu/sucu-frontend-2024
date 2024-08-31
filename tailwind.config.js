@@ -2,12 +2,11 @@
 import { colorScheme } from './src/styles/tailwind/color';
 
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-  theme: {
-    extend: {
-      colors: colorScheme,
-    },
-  },
-  plugins: [],
-}
-
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		extend: {
+			colors: colorScheme
+		}
+	},
+	plugins: []
+};
