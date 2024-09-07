@@ -18,13 +18,6 @@ export const buttonVariants = tv({
 			black: 'bg-sucu-gray-dark text-white'
 		}
 	},
-	compoundVariants: [
-		{
-			variant: 'outline',
-			size: 'lg',
-			class: 'focus:ring-2'
-		}
-	],
 	defaultVariants: {
 		variant: 'default',
 		size: 'default'
