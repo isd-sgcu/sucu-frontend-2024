@@ -77,7 +77,9 @@
 	<!-- Card Shadow Test -->
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Card Shadow (Hover)</h2>
-		<div class="p-6 bg-white text-black rounded shadow-card-shadow hover:shadow-card-shadow-hover transition-shadow">
+		<div
+			class="p-6 bg-white text-black rounded shadow-card-shadow hover:shadow-card-shadow-hover transition-shadow"
+		>
 			Card with hover shadow
 		</div>
 	</section>
