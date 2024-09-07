@@ -10,7 +10,9 @@ export const colorScheme = {
 			'02': '#FFA1B3',
 			'03': '#FFC0BE',
 			'04': '#FFD5D3',
-			'05': '#FFEBE7'
+			'05': '#FFEBE7',
+			hover: '#FF5489',
+			focus: '#FFDBE6'
 		}
 	}
 };
