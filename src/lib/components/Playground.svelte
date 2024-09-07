@@ -35,8 +35,6 @@
 		'bg-sucu-pink-hover',
 		'bg-sucu-pink-focus'
 	];
-
-	let focusButton: HTMLButtonElement;
 </script>
 
 <div>
