@@ -102,7 +102,7 @@
 				<h4>Default</h4>
 				<Button variant="default" size="default">Default</Button>
 				<Button color="black">Default Black</Button>
-				<Button color="white">Default Black</Button>
+				<Button color="white">Default White</Button>
 				<Button variant="outline">Default Outline</Button>
 			</div>
 			<div class="flex flex-col items-center gap-2">
