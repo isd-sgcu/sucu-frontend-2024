@@ -10,6 +10,6 @@
 	$: classes = buttonVariants({ variant, size, className, color });
 </script>
 
-<button class={classes} on:click on:keydown type="button">
+<button class={classes} on:click on:keydown {...$$restProps}>
 	<slot />
 </button>
