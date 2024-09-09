@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { typography } from '../../styles/tailwind/typography';
+	import Button from './Button.svelte';
 
 	const typographyVariants: Array<
 		| 'heading1'
@@ -30,7 +31,9 @@
 		'bg-sucu-pink-02',
 		'bg-sucu-pink-03',
 		'bg-sucu-pink-04',
-		'bg-sucu-pink-05'
+		'bg-sucu-pink-05',
+		'bg-sucu-pink-hover',
+		'bg-sucu-pink-focus'
 	];
 </script>
 
@@ -81,6 +84,34 @@
 			class="p-6 bg-white text-black rounded shadow-card-shadow hover:shadow-card-shadow-hover transition-shadow"
 		>
 			Card with hover shadow
+		</div>
+	</section>
+
+	<!-- Button Test -->
+	<section class="section w-fit">
+		<h2 class="font-bold text-2xl mb-4">Button Variants</h2>
+		<div class="grid grid-cols-3 gap-2">
+			<div class="flex flex-col items-center gap-2">
+				<h4>Small</h4>
+				<Button variant="default" size="sm">Small</Button>
+				<Button color="black" size="sm">Small Black</Button>
+				<Button color="white" size="sm">Small White</Button>
+				<Button variant="outline" size="sm">Small Outline</Button>
+			</div>
+			<div class="flex flex-col items-center gap-2">
+				<h4>Default</h4>
+				<Button variant="default" size="default">Default</Button>
+				<Button color="black">Default Black</Button>
+				<Button color="white">Default White</Button>
+				<Button variant="outline">Default Outline</Button>
+			</div>
+			<div class="flex flex-col items-center gap-2">
+				<h4>Large</h4>
+				<Button variant="default" size="lg">Large</Button>
+				<Button size="lg" color="black">Large Black</Button>
+				<Button variant="default" size="lg" color="white">Large White</Button>
+				<Button variant="outline" size="lg">Large Outline</Button>
+			</div>
 		</div>
 	</section>
 </div>
