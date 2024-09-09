@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: 'Manop';
+	src: url('/fonts/Manop.otf') format('opentype');
+}
+
+@layer base {
+	* {
+		font-family: 'Manop', sans-serif;
+	}
+}
