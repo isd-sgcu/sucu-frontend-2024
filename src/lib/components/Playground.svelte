@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { typography } from '../../styles/tailwind/typography';
 	import Button from './Button.svelte';
+	import TabCapsuleItem from './TabCapsule.svelte';
 
 	const typographyVariants: Array<
 		| 'heading1'
@@ -35,6 +36,16 @@
 		'bg-sucu-pink-hover',
 		'bg-sucu-pink-focus'
 	];
+
+	let selectedTabs: string[] = [];
+	let tabs = pinkClasses.map((label) => ({ label, active: false }));
+	function toggle(index: number) {
+		tabs = tabs.map((tab, i) => (i === index ? { ...tab, active: !tab.active } : tab));
+		const tab = tabs[index];
+		selectedTabs = tab.active
+			? [...selectedTabs, tab.label]
+			: selectedTabs.filter((label) => label !== tab.label);
+	}
 </script>
 
 <div>
@@ -113,6 +124,21 @@
 				<Button variant="outline" size="lg">Large Outline</Button>
 			</div>
 		</div>
+	</section>
+
+	<!-- TabCapsule.svelte -->
+	<section class="section">
+		<h2 class="font-bold text-2xl mb-4">Capsule Tabs</h2>
+		<div class="flex items-center gap-2">
+			{#each tabs as tab, i}
+				<TabCapsuleItem active={tab.active} label={tab.label} onClick={() => toggle(i)} />
+			{/each}
+		</div>
+		{#if selectedTabs.length > 0}
+			<p class="mt-4">Selected Tabs: {selectedTabs.join(', ')}</p>
+		{:else}
+			<p class="mt-4">No Tab Selected</p>
+		{/if}
 	</section>
 </div>
 
