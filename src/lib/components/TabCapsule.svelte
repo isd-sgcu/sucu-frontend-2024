@@ -5,7 +5,6 @@
 
 	export let active: boolean = false;
 	export let label: string;
-	export let onClick: () => void;
 
 	let isHovered = false;
 </script>
@@ -19,7 +18,7 @@
 	)}
 	on:mouseenter={() => (isHovered = true)}
 	on:mouseleave={() => (isHovered = false)}
-	on:click={onClick}
+	on:click
 >
 	<span class="text-sm md:text-base">{label}</span>
 	<Fa

@@ -132,7 +132,7 @@
 		<h2 class="font-bold text-2xl mb-4">Capsule Tabs</h2>
 		<div class="flex flex-wrap items-center gap-2">
 			{#each tabs as tab, i}
-				<TabCapsuleItem active={tab.active} label={tab.label} onClick={() => toggle(i)} />
+				<TabCapsuleItem active={tab.active} label={tab.label} on:click={() => toggle(i)} />
 			{/each}
 		</div>
 		{#if selectedTabs.length > 0}
