@@ -1,20 +1,12 @@
 <script lang="ts">
-	import { buttonVariants, type ButtonProps } from '../../styles/tailwind/button';
 	import Button from '$lib/components/Button.svelte';
 	import { modalShow } from './store';
 	import { onMount, onDestroy } from 'svelte';
 	import { typography } from '../../styles/tailwind/typography';
-	export let variant: ButtonProps['variant'] = 'default';
-	export let size: ButtonProps['size'] = 'default';
-	export let color: ButtonProps['color'] = undefined;
-	export let className: string = '';
-	export { className as class };
-
-	$: classes = buttonVariants({ variant, size, className, color });
 
 	let x = false;
 
-	function handleStorageChange(event: any) {
+	function handleStorageChange(event: StorageEvent) {
 		if (event.key === 'modalShow') {
 			x = event.newValue === 'true';
 		}
@@ -54,9 +46,15 @@
 
 {#if x}
 	<div class="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50">
-		<div class="bg-white h-[500px] max-md:h-[600px] max-md:w-[400px] w-[800px] rounded p-[36px] flex flex-col">
+		<div
+			class="bg-white h-[500px] max-md:h-[600px] max-md:w-[400px] w-[800px] rounded p-[36px] flex flex-col"
+		>
 			<div class="flex justify-between items-center">
-				<div class={`md:${typography({ variant: 'heading2' })} max-md:${typography({ variant: 'heading4' })}`}>เอกสารที่เกี่ยวข้อง</div>
+				<div
+					class={`md:${typography({ variant: 'heading2' })} max-md:${typography({ variant: 'heading4' })}`}
+				>
+					เอกสารที่เกี่ยวข้อง
+				</div>
 				<button class="hover:scale-105 transition-all" on:click={() => closeModal()}>
 					<svg
 						width="28"
