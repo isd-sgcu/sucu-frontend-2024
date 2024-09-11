@@ -54,9 +54,9 @@
 
 {#if x}
 	<div class="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50">
-		<div class="bg-white h-[500px] w-[800px] rounded p-[36px] flex flex-col">
+		<div class="bg-white h-[500px] max-md:h-[600px] max-md:w-[400px] w-[800px] rounded p-[36px] flex flex-col">
 			<div class="flex justify-between items-center">
-				<div class={typography({ variant: 'heading2' })}>เอกสารที่เกี่ยวข้อง</div>
+				<div class={`md:${typography({ variant: 'heading2' })} max-md:${typography({ variant: 'heading4' })}`}>เอกสารที่เกี่ยวข้อง</div>
 				<button class="hover:scale-105 transition-all" on:click={() => closeModal()}>
 					<svg
 						width="28"
@@ -87,7 +87,7 @@
   dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 mt-5"
 			>
 				{#each mockData as item}
-					<div class="w-[500px] mb-2">
+					<div class="mb-2">
 						<Button variant="default" size="default"
 							><div class="mr-3">
 								<svg
