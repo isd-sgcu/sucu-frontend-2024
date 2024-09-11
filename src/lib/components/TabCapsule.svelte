@@ -21,7 +21,7 @@
 	on:mouseleave={() => (isHovered = false)}
 	on:click={onClick}
 >
-	<span class="text-sm md:text-md">{label}</span>
+	<span class="text-sm md:text-base">{label}</span>
 	<Fa
 		icon={faPlus}
 		class={cn('transition-transform transform', {
