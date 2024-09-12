@@ -3,7 +3,7 @@
 	import { modalShow } from './store';
 	import { onMount, onDestroy } from 'svelte';
 	import { typography } from '../../styles/tailwind/typography';
-	import { faX , faFile } from '@fortawesome/free-solid-svg-icons';
+	import { faX, faFile } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	let isClose = false;
 
@@ -57,9 +57,7 @@
 					เอกสารที่เกี่ยวข้อง
 				</div>
 				<button class="hover:scale-105 transition-all" on:click={() => closeModal()}>
-					<Fa
-					icon={faX}
-				/>
+					<Fa icon={faX} />
 				</button>
 			</div>
 			<div class="h-[2px] bg-sucu-pink-03 w-full mt-5"></div>
@@ -77,9 +75,7 @@
 					<div class="mb-2">
 						<Button variant="default" size="default"
 							><div class="mr-3">
-								<Fa
-								icon={faFile}
-							/>
+								<Fa icon={faFile} />
 							</div>
 							{item.content}</Button
 						>

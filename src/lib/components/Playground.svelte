@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { typography } from '../../styles/tailwind/typography';
 	import Button from './Button.svelte';
+	import Modal from '$lib/components/Modal.svelte';
+	import { modalShow } from '../../lib/components/store';
+
+	modalShow.set(false);
+
+	function showModal() {
+		modalShow.set(true);
+		console.log(localStorage.getItem('modalShow'));
+	}
 
 	const typographyVariants: Array<
 		| 'heading1'
@@ -113,6 +122,14 @@
 				<Button variant="outline" size="lg">Large Outline</Button>
 			</div>
 		</div>
+	</section>
+
+	<section class="section w-fit">
+		<Button variant="default" size="default" on:click={() => showModal()}>Click For Modal</Button>
+
+		{#if modalShow}
+			<Modal />
+		{/if}
 	</section>
 </div>
 
