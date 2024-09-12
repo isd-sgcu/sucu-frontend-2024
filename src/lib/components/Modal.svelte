@@ -3,12 +3,13 @@
 	import { modalShow } from './store';
 	import { onMount, onDestroy } from 'svelte';
 	import { typography } from '../../styles/tailwind/typography';
-
-	let x = false;
+	import { faX , faFile } from '@fortawesome/free-solid-svg-icons';
+	import Fa from 'svelte-fa';
+	let isClose = false;
 
 	function handleStorageChange(event: StorageEvent) {
 		if (event.key === 'modalShow') {
-			x = event.newValue === 'true';
+			isClose = event.newValue === 'true';
 		}
 	}
 
@@ -16,7 +17,7 @@
 		if (typeof window !== 'undefined') {
 			window.addEventListener('storage', handleStorageChange);
 			modalShow.subscribe((value) => {
-				x = value;
+				isClose = value;
 			});
 		}
 	});
@@ -44,7 +45,7 @@
 	];
 </script>
 
-{#if x}
+{#if isClose}
 	<div class="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50">
 		<div
 			class="bg-white h-[500px] max-md:h-[600px] max-md:w-[400px] w-[800px] rounded p-[36px] flex flex-col"
@@ -56,21 +57,9 @@
 					เอกสารที่เกี่ยวข้อง
 				</div>
 				<button class="hover:scale-105 transition-all" on:click={() => closeModal()}>
-					<svg
-						width="28"
-						height="28"
-						viewBox="0 0 28 28"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M2 2L26 26M2 26L26 2L2 26Z"
-							stroke="black"
-							stroke-width="3"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-					</svg>
+					<Fa
+					icon={faX}
+				/>
 				</button>
 			</div>
 			<div class="h-[2px] bg-sucu-pink-03 w-full mt-5"></div>
@@ -88,21 +77,9 @@
 					<div class="mb-2">
 						<Button variant="default" size="default"
 							><div class="mr-3">
-								<svg
-									width="16"
-									height="20"
-									viewBox="0 0 16 20"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M5 10H11M5 14H11M13 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H8.586C8.8512 1.00006 9.10551 1.10545 9.293 1.293L14.707 6.707C14.8946 6.89449 14.9999 7.1488 15 7.414V17C15 17.5304 14.7893 18.0391 14.4142 18.4142C14.0391 18.7893 13.5304 19 13 19Z"
-										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-								</svg>
+								<Fa
+								icon={faFile}
+							/>
 							</div>
 							{item.content}</Button
 						>
@@ -110,7 +87,6 @@
 				{/each}
 			</div>
 		</div>
-		<!-- <Button variant="default" size="default" on:click={() => closeModal()}>Close Modal</Button> -->
 	</div>
 {/if}
 
