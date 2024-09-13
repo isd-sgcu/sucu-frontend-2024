@@ -151,7 +151,7 @@
 		{/if}
 	</section>
 
-	<section class="section w-fit">
+	<section class="section mb-5">
 		<h2 class="font-bold text-2xl mb-4">Modal</h2>
 		<Button variant="default" size="default" on:click={() => showModal()}>Click For Modal</Button>
 
@@ -160,7 +160,8 @@
 		{/if}
 	</section>
 
-	<Footer/>
+		<Footer />
+
 </div>
 
 <style>
