@@ -2,31 +2,23 @@
 	import Button from '$lib/components/Button.svelte';
 	import { modalShow } from './store';
 	import { onMount, onDestroy } from 'svelte';
-	import { typography } from '../../styles/tailwind/typography';
+	import { typography } from '../../../styles/tailwind/typography';
 	import { faX, faFile } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
-	let isClose = false;
+	let isModalOpen = false;
 
-	function handleStorageChange(event: StorageEvent) {
-		if (event.key === 'modalShow') {
-			isClose = event.newValue === 'true';
-		}
-	}
+	let unsubscribe: () => void;
 
 	onMount(() => {
-		if (typeof window !== 'undefined') {
-			window.addEventListener('storage', handleStorageChange);
-			modalShow.subscribe((value) => {
-				isClose = value;
-			});
-		}
+		unsubscribe = modalShow.subscribe((value) => {
+			isModalOpen = value;
+		});
 	});
 
 	onDestroy(() => {
-		if (typeof window !== 'undefined') {
-			window.removeEventListener('storage', handleStorageChange);
-		}
+		if (unsubscribe) unsubscribe();
 	});
+
 	function closeModal() {
 		modalShow.set(false);
 	}
@@ -45,7 +37,7 @@
 	];
 </script>
 
-{#if isClose}
+{#if isModalOpen}
 	<div class="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50">
 		<div
 			class="bg-white h-[500px] max-md:h-[600px] max-md:w-[400px] w-[800px] rounded p-[36px] flex flex-col"
@@ -56,7 +48,7 @@
 				>
 					เอกสารที่เกี่ยวข้อง
 				</div>
-				<button class="hover:scale-105 transition-all" on:click={() => closeModal()}>
+				<button class="hover:scale-105 transition-all" on:click={closeModal}>
 					<Fa icon={faX} />
 				</button>
 			</div>

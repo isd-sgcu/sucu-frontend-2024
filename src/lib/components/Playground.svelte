@@ -2,14 +2,13 @@
 	import { typography } from '../../styles/tailwind/typography';
 	import Button from './Button.svelte';
 	import TabCapsuleItem from './TabCapsule.svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import { modalShow } from '../../lib/components/store';
+	import Modal from '$lib/components/Modal/Modal.svelte';
+	import { modalShow } from './Modal/store';
 
 	modalShow.set(false);
 
 	function showModal() {
 		modalShow.set(true);
-		console.log(localStorage.getItem('modalShow'));
 	}
 
 	const typographyVariants: Array<
@@ -152,6 +151,7 @@
 	</section>
 
 	<section class="section w-fit">
+		<h2 class="font-bold text-2xl mb-4">Modal</h2>
 		<Button variant="default" size="default" on:click={() => showModal()}>Click For Modal</Button>
 
 		{#if modalShow}
