@@ -139,7 +139,7 @@
 	</div>
 
 	<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-	<div class={`max-md:text-center w-full max-md:${typography({ variant: 'body-small' })}`}>
+	<div class={`max-md:text-center w-full max-md:text-xs`}>
 		© 2024 SGCU. All rights reserved Develop by ISD
 	</div>
 </div>
