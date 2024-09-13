@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createEventDispatcher, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import { getTabsContext } from './tabsContext';
 	import { cn } from '$lib/utils';
 	import { slide } from 'svelte/transition';
@@ -8,7 +8,6 @@
 
 	const tabsContext = getTabsContext();
 	const { activeTab } = tabsContext;
-	const dispatch = createEventDispatcher();
 
 	onMount(() => {
 		tabsContext.registerTab({ value });
@@ -18,7 +17,6 @@
 
 	function handleClick() {
 		tabsContext.selectTab(value);
-		dispatch('click', { value });
 	}
 </script>
 
