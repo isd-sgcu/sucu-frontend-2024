@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getTabsContext, type TabsContext } from './tabsContext';
+	import { getTabsContext } from './tabsContext';
 
 	export let value: string;
 	const { activeTab } = getTabsContext();

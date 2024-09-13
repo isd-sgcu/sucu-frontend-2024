@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { afterUpdate, createEventDispatcher, onMount } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 	import { getTabsContext } from './tabsContext';
 	import { cn } from '$lib/utils';
 	import { slide } from 'svelte/transition';
