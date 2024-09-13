@@ -5,7 +5,6 @@
 	import { slide } from 'svelte/transition';
 
 	export let value: string;
-	export let disabled: boolean = false;
 
 	const tabsContext = getTabsContext();
 	const { activeTab } = tabsContext;
@@ -18,10 +17,8 @@
 	$: isActive = $activeTab === value;
 
 	function handleClick() {
-		if (!disabled) {
-			tabsContext.selectTab(value);
-			dispatch('click', { value });
-		}
+		tabsContext.selectTab(value);
+		dispatch('click', { value });
 	}
 </script>
 
@@ -34,7 +31,6 @@
 			}
 		)}
 		on:click={handleClick}
-		{disabled}
 	>
 		<slot />
 	</button>
