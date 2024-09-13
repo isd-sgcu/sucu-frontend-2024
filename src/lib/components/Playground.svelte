@@ -163,28 +163,28 @@
 
 	<section class="section mb-5 gap-y-5 flex flex-col">
 		<h2 class="font-bold text-2xl mb-4">List</h2>
-		
+
 		<List
-		variant="pink"
+			variant="pink"
 			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
 			createdAt="2022-01-01"
 			createdBy="Admin"
 			linkHref="https://google.com"
-			/>
-			<List
+		/>
+		<List
 			variant="grey"
-				title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
-				createdAt="2022-01-01"
-				createdBy="Admin"
-				linkHref="https://google.com"
-				/>
-				<List
-				variant="base"
-					title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
-					createdAt="2022-01-01"
-					createdBy="Admin"
-					linkHref="https://google.com"
-					/>
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
+		<List
+			variant="base"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
 	</section>
 
 	<Footer />
