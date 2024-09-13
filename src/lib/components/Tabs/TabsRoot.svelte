@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
 	import { setTabsContext } from './tabsContext';
 
 	export let defaultActiveTab: string = '';
