@@ -5,7 +5,7 @@ export const listVariants = tv({
 	variants: {
 		variant: {
 			pink: 'bg-[#FFEBE7]',
-			grey: 'bg-[#F7F7F7]', 
+			grey: 'bg-[#F7F7F7]',
 			default: 'bg-white'
 		}
 	},
