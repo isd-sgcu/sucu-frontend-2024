@@ -26,10 +26,14 @@
 	class={`h-auto w-[761px] flex flex-col py-[12px] px-[24px] max-md:w-[390px] rounded ${listVariants[variant]}`}
 >
 	<div
-    class={`text-ellipsis whitespace-nowrap overflow-hidden ${typography({ variant: 'body-large' })} max-md:${typography({ variant: 'body-normal' })}`}
+		class={`text-ellipsis whitespace-nowrap overflow-hidden ${typography({ variant: 'body-large' })} max-md:${typography({ variant: 'body-normal' })}`}
 	>
 		{title}
 	</div>
 
-    <div class={`max-md:${typography({ variant: 'body-small' })} ${typography({ variant: 'body-normal' })}`}>{formatDate(createdAt)} โดย {createdBy}</div>
+	<div
+		class={`max-md:${typography({ variant: 'body-small' })} ${typography({ variant: 'body-normal' })}`}
+	>
+		{formatDate(createdAt)} โดย {createdBy}
+	</div>
 </a>
