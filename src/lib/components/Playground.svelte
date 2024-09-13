@@ -160,8 +160,7 @@
 		{/if}
 	</section>
 
-		<Footer />
-
+	<Footer />
 </div>
 
 <style>

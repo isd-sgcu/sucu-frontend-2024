@@ -1,13 +1,11 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
 	import { typography } from '../../../styles/tailwind/typography';
-	import Fa from 'svelte-fa';
-	import sucuImg from '$lib/components/Footer/suculogo.png'
+	import sucuImg from '$lib/components/Footer/suculogo.png';
 </script>
 
 <div class="h-auto w-full py-[64px] px-[135px] max-md:p-[70px] gap-6 bg-sucu-pink-05">
 	<div class="flex justify-between w-full h-full max-md:hidden">
-		<div class="h-auto w-auto gap-6 flex ">
+		<div class="h-auto w-auto gap-6 flex">
 			<div class="flex flex-col gap-3">
 				<!-- sccu icon big -->
 				<svg
@@ -61,14 +59,11 @@
 
 					<div class={typography({ variant: 'body-normal' })}>sapanisitchula</div>
 				</div>
-
-	
 			</div>
 			<div class="flex flex-col gap-3">
 				<!-- sucu icon big -->
-				<img src={sucuImg} class='w-[34px] h-[55px]' alt="sucuicon"/>
-					
-					
+				<img src={sucuImg} class="w-[34px] h-[55px]" alt="sucuicon" />
+
 				<div class={typography({ variant: 'heading4' })}>สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย</div>
 
 				<div class="flex gap-3">
@@ -85,7 +80,9 @@
 							fill="#3F3A3A"
 						/>
 					</svg>
-					<div class={typography({ variant: 'body-normal' })}>องค์การบริหารสโมสรนิสิตจุฬาลงกรณ์มหาวิทยาลัย (อบจ.)</div>
+					<div class={typography({ variant: 'body-normal' })}>
+						องค์การบริหารสโมสรนิสิตจุฬาลงกรณ์มหาวิทยาลัย (อบจ.)
+					</div>
 				</div>
 
 				<div class="flex gap-3">
@@ -108,37 +105,41 @@
 
 					<div class={typography({ variant: 'body-normal' })}>sgcu.chula</div>
 				</div>
-
-	
 			</div>
 		</div>
 
-
-			<div class="w-[233px] h-full gap-3 mt-[79px] justify-end ml-6 max-md:ml-0">
-				<div class={typography({ variant: 'body-normal' })}>ประกาศ</div>
-				<div class={typography({ variant: 'body-normal' })}>เอกสาร</div>
-				<div class={typography({ variant: 'body-normal' })}>งบประมาณและสถิติ</div>
-				<div class={typography({ variant: 'body-normal' })}>สโมสรนิสิตฯ</div>
-			</div>
-
+		<div class="w-[233px] h-full gap-3 mt-[79px] justify-end ml-6 max-md:ml-0">
+			<div class={typography({ variant: 'body-normal' })}>ประกาศ</div>
+			<div class={typography({ variant: 'body-normal' })}>เอกสาร</div>
+			<div class={typography({ variant: 'body-normal' })}>งบประมาณและสถิติ</div>
+			<div class={typography({ variant: 'body-normal' })}>สโมสรนิสิตฯ</div>
+		</div>
 	</div>
 
-
 	<div class="flex flex-col md:hidden">
-	<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>ประกาศ</div>
+		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>ประกาศ</div>
 		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
 		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>เอกสาร</div>
-			<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-			<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>งบประมาณและสถิติ</div>
-				<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-				<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>สโมสรนิสิตฯ</div>
-				<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-				<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย</div>
-				<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-				<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>องค์การบริหารสโมสรนิสิตจุฬาฯ (อบจ.)</div>
-			</div>
+		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
+		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+			งบประมาณและสถิติ
+		</div>
+		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
+		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+			สโมสรนิสิตฯ
+		</div>
+		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
+		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+			สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย
+		</div>
+		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
+		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+			องค์การบริหารสโมสรนิสิตจุฬาฯ (อบจ.)
+		</div>
+	</div>
 
 	<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-	<div class={`max-md:text-center w-full max-md:${typography({ variant: 'body-small' })}`}>© 2024 SGCU. All rights reserved
-		Develop by  ISD</div>
+	<div class={`max-md:text-center w-full max-md:${typography({ variant: 'body-small' })}`}>
+		© 2024 SGCU. All rights reserved Develop by ISD
+	</div>
 </div>
