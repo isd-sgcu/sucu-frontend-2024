@@ -1,7 +1,7 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 
 export const buttonVariants = tv({
-	base: 'inline-flex items-center justify-center whitespace-nowrap rounded-xs text-sm font-semibold shadow-button-shadow text-white transition-colors duration-200 focus:outline-none focus:ring-[3px] focus:ring-sucu-pink-focus focus:border-transparent ring-offset-0',
+	base: 'inline-flex items-center justify-center whitespace-nowrap rounded-xs font-semibold shadow-button-shadow text-white transition-colors duration-200 focus:outline-none focus:ring focus:ring-sucu-pink-focus focus:border-transparent ring-offset-0',
 	variants: {
 		variant: {
 			default: 'bg-sucu-pink-02 hover:bg-sucu-pink-hover',
@@ -9,9 +9,9 @@ export const buttonVariants = tv({
 				'border border-sucu-pink-04 bg-white text-black shadow-none hover:bg-sucu-pink-hover hover:text-white hover:border-sucu-pink-hover'
 		},
 		size: {
-			default: 'h-10 px-4 py-2',
+			default: 'h-10 px-4 py-2 text-base',
 			sm: 'py-1.5 px-3 text-xs focus:ring-2',
-			lg: 'py-2 px-[18px] text-lg'
+			lg: 'py-2 px-[18px] text-xl'
 		},
 		color: {
 			white: 'bg-white text-black hover:text-white',
