@@ -5,6 +5,7 @@
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { modalShow } from './Modal/store';
+	import List from './List/List.svelte';
 
 	modalShow.set(false);
 
@@ -158,6 +159,32 @@
 		{#if modalShow}
 			<Modal />
 		{/if}
+	</section>
+
+	<section class="section mb-5 gap-y-5 flex flex-col">
+		<h2 class="font-bold text-2xl mb-4">List</h2>
+		
+		<List
+		variant="pink"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+			/>
+			<List
+			variant="grey"
+				title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+				createdAt="2022-01-01"
+				createdBy="Admin"
+				linkHref="https://google.com"
+				/>
+				<List
+				variant="base"
+					title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+					createdAt="2022-01-01"
+					createdBy="Admin"
+					linkHref="https://google.com"
+					/>
 	</section>
 
 	<Footer />
