@@ -3,6 +3,7 @@
 	import Button from './Button.svelte';
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
+	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { modalShow } from './Modal/store';
 
 	modalShow.set(false);
@@ -158,6 +159,8 @@
 			<Modal />
 		{/if}
 	</section>
+
+	<Footer/>
 </div>
 
 <style>
