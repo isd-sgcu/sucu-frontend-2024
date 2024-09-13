@@ -28,7 +28,7 @@
 <div class="relative inline-block">
 	<button
 		class={cn(
-			'mx-auto whitespace-nowrap py-4 px-1 font-medium text-xl text-sucu-gray hover:text-sucu-pink-hover hover:border-gray-300',
+			'text-base mx-auto whitespace-nowrap py-4 px-1 font-medium sm:text-xl text-sucu-gray hover:text-sucu-pink-hover hover:border-gray-300',
 			{
 				'border-sucu-pink-hover text-indigo': isActive
 			}
@@ -42,7 +42,7 @@
 	{#if isActive}
 		<div
 			class={cn(
-				'absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-2 w-[120%] bg-sucu-pink-hover rounded-lg'
+				'absolute left-1/2 transform -translate-x-1/2 bottom-[5.5px] sm:-bottom-1 h-1 sm:h-2 w-[120%] bg-sucu-pink-hover rounded-lg'
 			)}
 			transition:slide={{ duration: 300, axis: 'x' }}
 		/>
