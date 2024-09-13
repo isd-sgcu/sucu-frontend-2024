@@ -1,4 +1,4 @@
-import { writable, get, type Writable } from 'svelte/store';
+import { writable, type Writable } from 'svelte/store';
 import { setContext, getContext } from 'svelte';
 
 interface Tab {
@@ -18,7 +18,6 @@ const createTabs = (): TabsContext => {
 
 	const registerTab = (tab: Tab) => {
 		tabs.update((currTabs) => [...currTabs, tab]);
-		if (get(activeTab) === '') activeTab.set(tab.value);
 	};
 
 	const selectTab = (value: string) => {
