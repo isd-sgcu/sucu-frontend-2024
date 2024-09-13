@@ -5,6 +5,8 @@
 	import { slide } from 'svelte/transition';
 
 	export let value: string;
+	export let className: string = '';
+	export { className as class };
 
 	const tabsContext = getTabsContext();
 	const { activeTab } = tabsContext;
@@ -20,7 +22,7 @@
 	}
 </script>
 
-<div class="relative inline-block">
+<div class={cn('relative inline-block', className)}>
 	<button
 		class={cn(
 			'text-base mx-auto whitespace-nowrap py-4 px-1 font-medium sm:text-xl text-sucu-gray hover:text-sucu-pink-hover hover:border-gray-300',

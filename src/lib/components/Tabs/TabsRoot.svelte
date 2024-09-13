@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { cn } from '$lib/utils';
 	import { setTabsContext } from './tabsContext';
 
 	export let defaultActiveTab: string = '';
+	export let className: string = '';
+	export { className as class };
 
 	const tabs = setTabsContext();
 
@@ -10,6 +13,6 @@
 	}
 </script>
 
-<div>
+<div class={className}>
 	<slot />
 </div>
