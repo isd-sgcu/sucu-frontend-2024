@@ -3,7 +3,6 @@
 	import Button from './Button.svelte';
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
-	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { modalShow } from './Modal/store';
 	import List from './List/List.svelte';
 
@@ -179,7 +178,7 @@
 			linkHref="https://google.com"
 		/>
 		<List
-			variant="base"
+			variant="default"
 			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
 			createdAt="2022-01-01"
 			createdBy="Admin"
@@ -187,7 +186,7 @@
 		/>
 	</section>
 
-	<Footer />
+
 </div>
 
 <style>

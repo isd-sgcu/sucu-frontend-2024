@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { type Variant, listVariants } from '../../../styles/tailwind/list';
 	import { typography } from '../../../styles/tailwind/typography';
+	import { cn } from '../../utils/cn';
+	import dayjs from 'dayjs';
+	import buddhistEra from 'dayjs/plugin/buddhistEra';
+	import 'dayjs/locale/th';
+
+	dayjs.extend(buddhistEra);
 
 	export let title: string;
 	export let createdAt: string;
@@ -9,30 +15,30 @@
 	export let variant: Variant;
 
 	function formatDate(dateString: string): string {
-		const date = new Date(dateString);
-		const options: Intl.DateTimeFormatOptions = {
-			day: '2-digit',
-			month: 'long',
-			year: 'numeric',
-			calendar: 'buddhist'
-		};
-		return new Intl.DateTimeFormat('th-TH', options).format(date);
+		return dayjs(dateString).locale('th').format('DD MMMM BBBB');
 	}
 </script>
 
 <a
 	href={linkHref}
 	target="_blank"
-	class={`h-auto w-[761px] flex flex-col py-[12px] px-[24px] max-md:w-[390px] rounded ${listVariants[variant]}`}
+	class={`h-auto w-[761px] flex flex-col py-3 px-4 max-md:w-[390px] rounded ${listVariants({ variant })}`}
 >
 	<div
-		class={`text-ellipsis whitespace-nowrap overflow-hidden ${typography({ variant: 'body-large' })} max-md:${typography({ variant: 'body-normal' })}`}
+		class={cn(
+			'text-ellipsis whitespace-nowrap overflow-hidden',
+			typography({ variant: 'body-large' }),
+			`max-md:${typography({ variant: 'body-normal' })}`
+		)}
 	>
 		{title}
 	</div>
 
 	<div
-		class={`max-md:${typography({ variant: 'body-small' })} ${typography({ variant: 'body-normal' })}`}
+		class={cn(
+			`max-md:${typography({ variant: 'body-small' })}`,
+			typography({ variant: 'body-normal' })
+		)}
 	>
 		{formatDate(createdAt)} โดย {createdBy}
 	</div>
