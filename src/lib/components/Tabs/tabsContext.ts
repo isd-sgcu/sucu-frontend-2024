@@ -18,7 +18,7 @@ const createTabs = (): TabsContext => {
 
 	const registerTab = (tab: Tab) => {
 		tabs.update((currTabs) => [...currTabs, tab]);
-		if (get(activeTab) === null) activeTab.set(tab.value);
+		if (get(activeTab) === '') activeTab.set(tab.value);
 	};
 
 	const selectTab = (value: string) => {
