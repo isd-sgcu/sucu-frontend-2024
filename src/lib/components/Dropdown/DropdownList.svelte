@@ -1,7 +1,7 @@
 <script lang="ts">
 	import DropdownItem from '$lib/components/Dropdown/DropdownItem.svelte';
 
-	export let items: string[] = ['Hi', 'jpoas', 'adfsd', 'asdafsds'];
+	export let items: string[] = [];
 	export let currentChoice: string | null = null;
 </script>
 
