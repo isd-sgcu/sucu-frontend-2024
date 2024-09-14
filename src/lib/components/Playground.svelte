@@ -5,6 +5,11 @@
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import { modalShow } from './Modal/store';
 	import List from './List/List.svelte';
+	import TabsRoot from './Tabs/TabsRoot.svelte';
+	import TabsList from './Tabs/TabsList.svelte';
+	import TabsTrigger from './Tabs/TabsTrigger.svelte';
+	import TabsContent from './Tabs/TabsContent.svelte';
+	import Navbar from './Navbar.svelte';
 
 	modalShow.set(false);
 
@@ -59,6 +64,7 @@
 
 <div>
 	<!-- Typography Section -->
+	<Navbar />
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Typography Variants</h2>
 		{#each typographyVariants as variant}
@@ -158,6 +164,26 @@
 		{#if modalShow}
 			<Modal />
 		{/if}
+	</section>
+
+	<section class="section">
+		<TabsRoot defaultActiveTab="all">
+			<TabsList>
+				<TabsTrigger value="all">ทั้งหมด</TabsTrigger>
+				<TabsTrigger value="sgcu">อบจ.</TabsTrigger>
+				<TabsTrigger value="sccu">สภานิสิต</TabsTrigger>
+			</TabsList>
+
+			<TabsContent value="all">
+				<p>This is the all tab content.</p>
+			</TabsContent>
+			<TabsContent value="sgcu">
+				<p>This is the sgcu tab content.</p>
+			</TabsContent>
+			<TabsContent value="sccu">
+				<p>This is the sccu tab content.</p>
+			</TabsContent>
+		</TabsRoot>
 	</section>
 
 	<section class="section mb-5 gap-y-5 flex flex-col">
