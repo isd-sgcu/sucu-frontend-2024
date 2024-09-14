@@ -4,6 +4,7 @@
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import { modalShow } from './Modal/store';
+	import Navbar from './Navbar.svelte';
 
 	modalShow.set(false);
 
@@ -58,6 +59,7 @@
 
 <div>
 	<!-- Typography Section -->
+	<Navbar />
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Typography Variants</h2>
 		{#each typographyVariants as variant}
