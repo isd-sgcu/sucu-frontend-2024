@@ -78,7 +78,7 @@
 	</button>
 
 	{#if isOpen}
-		<div class="absolute top-[calc(100%+8px)] w-full">
+		<div class="absolute top-[calc(100%+8px)] w-full z-30">
 			<DropdownList bind:items bind:currentChoice />
 		</div>
 	{/if}
