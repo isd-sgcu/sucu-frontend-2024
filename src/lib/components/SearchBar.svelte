@@ -4,13 +4,6 @@
 
 	export let value: string = '';
 	let inputRef: HTMLInputElement;
-	let isFocus = false;
-	function handleFocus() {
-		isFocus = true;
-	}
-	function handleBlur() {
-		isFocus = false;
-	}
 
 	function handleClickIcon() {
 		inputRef.focus();
@@ -30,7 +23,5 @@
 		placeholder="ค้นหา"
 		bind:value
 		bind:this={inputRef}
-		on:focus={handleFocus}
-		on:blur={handleBlur}
 	/>
 </div>
