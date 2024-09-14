@@ -2,7 +2,7 @@
 	import { faSearch } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
-	export let value: string;
+	export let value: string = '';
 	let inputRef: HTMLInputElement;
 	let isFocus = false;
 	function handleFocus() {
