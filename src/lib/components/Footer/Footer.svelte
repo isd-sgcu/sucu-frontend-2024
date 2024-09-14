@@ -7,7 +7,7 @@
 	import { cn } from '$lib/utils/cn';
 </script>
 
-<div class="h-auto w-full py-[64px] px-[135px] max-md:p-[70px] gap-6 bg-sucu-pink-05">
+<div class="h-auto w-full py-16 px-[135px] max-md:p-[70px] gap-6 bg-sucu-pink-05">
 	<div class="flex justify-between w-full h-full max-md:hidden">
 		<div class="h-auto w-auto gap-6 flex">
 			<div class="flex flex-col gap-3">
