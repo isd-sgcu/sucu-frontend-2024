@@ -15,7 +15,7 @@
 	let saveChoice: string | null = null;
 
 	onMount(() => {
-		currentChoice = items[0] || placeholder;
+		currentChoice = items[0] || null;
 		saveChoice = currentChoice;
 	});
 
