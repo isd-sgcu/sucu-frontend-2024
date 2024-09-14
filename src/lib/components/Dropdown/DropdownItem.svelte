@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import {
 		dropdownItemVariants,
 		type DropdownItemProps
@@ -16,15 +15,15 @@
 	$: isSelected = currentSelectedChoice === text;
 
 	$: {
-        if (disabled) {
-            currentVariant = "disabled"
-        } else if (isHover) {
-            currentVariant = "hover"
-        } else if (isSelected) {
+		if (disabled) {
+			currentVariant = 'disabled';
+		} else if (isHover) {
+			currentVariant = 'hover';
+		} else if (isSelected) {
 			currentVariant = 'pressed';
 		} else {
-            currentVariant = 'default'
-        }
+			currentVariant = 'default';
+		}
 	}
 
 	function handleClick() {

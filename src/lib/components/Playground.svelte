@@ -197,7 +197,7 @@
 			<div class="flex flex-col gap-2">
 				<h3 class="font-semibold text-xl mb-2">Dropdown</h3>
 
-				<Dropdown items={choiceList} bind:currentChoice={dropdownValue} outerClass="w-64"/>
+				<Dropdown items={choiceList} bind:currentChoice={dropdownValue} outerClass="w-64" />
 
 				<p>Dropdown Value : {dropdownValue || 'no value'}</p>
 			</div>

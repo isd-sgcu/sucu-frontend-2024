@@ -7,17 +7,17 @@
 
 	export let items: string[] = [];
 	export let currentChoice: string | null = null;
-    export let outerClass : string = "";
+	export let outerClass: string = '';
 	let isOpen = false;
 	let hasSelected = false;
 	let currentVariant: DropdownProps['variant'] = 'transparent';
 	let placeholder: string = 'Select Item';
-    let saveChoice: string|null = null
+	let saveChoice: string | null = null;
 
-    onMount(() => {
-        currentChoice = items[0] || placeholder
-        saveChoice = currentChoice
-    })
+	onMount(() => {
+		currentChoice = items[0] || placeholder;
+		saveChoice = currentChoice;
+	});
 
 	$: {
 		if (isOpen) {
@@ -33,9 +33,9 @@
 
 	$: if (currentChoice) {
 		isOpen = false;
-        if (currentChoice !== saveChoice) {
-            hasSelected = true
-        }
+		if (currentChoice !== saveChoice) {
+			hasSelected = true;
+		}
 	}
 
 	function handleClickOpen() {
