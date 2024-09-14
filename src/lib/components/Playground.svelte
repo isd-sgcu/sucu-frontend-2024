@@ -10,6 +10,7 @@
 	import TabsTrigger from './Tabs/TabsTrigger.svelte';
 	import TabsContent from './Tabs/TabsContent.svelte';
 	import Navbar from './Navbar.svelte';
+	import Footer from './Footer/Footer.svelte';
 
 	modalShow.set(false);
 
@@ -211,6 +212,8 @@
 			linkHref="https://google.com"
 		/>
 	</section>
+
+	<Footer />
 </div>
 
 <style>
