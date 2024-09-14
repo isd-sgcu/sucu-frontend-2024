@@ -2,7 +2,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { typography } from './typography';
 
 export const dropdownItemVariants = tv({
-	base: `w-full ${typography({ variant: 'body-normal' })} transition-colors duration-200 px-4 py-2 text-left`,
+	base: `w-full ${typography({ variant: 'body-normal' })} transition-colors duration-200 px-4 py-2 text-left truncate`,
 	variants: {
 		variant: {
 			default: `bg-white text-black hover:bg-sucu-gray-01 hover:text-sucu-pink-01`,

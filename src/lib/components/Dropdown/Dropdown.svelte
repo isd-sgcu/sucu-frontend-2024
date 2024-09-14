@@ -68,12 +68,12 @@
 <div class={cn('relative w-full', outerClass)} bind:this={dropdownRef}>
 	<button
 		class={cn(
-			'w-full px-4 py-3 flex flex-row justify-between items-center rounded-sm',
+			'w-full px-4 py-3 flex flex-row justify-between items-center rounded-sm gap-1',
 			dropdownClass
 		)}
 		on:click={handleClickOpen}
 	>
-		<span>{currentChoice || placeholder}</span>
+		<span class="truncate">{currentChoice || placeholder}</span>
 		<Fa icon={faChevronDown} class={cn('w-6 h-6 transition-transform', isOpen && 'rotate-180')} />
 	</button>
 
