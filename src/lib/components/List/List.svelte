@@ -22,7 +22,7 @@
 <a
 	href={linkHref}
 	target="_blank"
-	class={`h-auto w-[761px] flex flex-col py-3 px-4 max-md:w-[390px] rounded ${listVariants({ variant })}`}
+	class={`h-auto w-full flex flex-col py-3 px-4 rounded ${listVariants({ variant })}`}
 >
 	<div
 		class={cn(
