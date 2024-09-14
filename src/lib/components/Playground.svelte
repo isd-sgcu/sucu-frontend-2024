@@ -8,6 +8,7 @@
 	import TabsList from './Tabs/TabsList.svelte';
 	import TabsTrigger from './Tabs/TabsTrigger.svelte';
 	import TabsContent from './Tabs/TabsContent.svelte';
+	import Navbar from './Navbar.svelte';
 
 	modalShow.set(false);
 
@@ -62,6 +63,7 @@
 
 <div>
 	<!-- Typography Section -->
+	<Navbar />
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Typography Variants</h2>
 		{#each typographyVariants as variant}
