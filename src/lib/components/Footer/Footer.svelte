@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { typography } from '../../../styles/tailwind/typography';
-	import sucuImg from '$lib/assets/images/suculogo.png'
+	import sucuImg from '$lib/assets/images/suculogo.png';
 	import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 	import Sccusvg from '$lib/assets/icons/sccu.svg';
 	import Fa from 'svelte-fa';
 
-	console.log("svg" ,Sccusvg);
+	console.log('svg', Sccusvg);
 </script>
 
 <div class="h-auto w-full py-[64px] px-[135px] max-md:p-[70px] gap-6 bg-sucu-pink-05">
@@ -13,7 +13,7 @@
 		<div class="h-auto w-auto gap-6 flex">
 			<div class="flex flex-col gap-3">
 				<!-- sccu icon big -->
-				<img src={Sccusvg} alt="sccu icon" width="55" height="55">
+				<img src={Sccusvg} alt="sccu icon" width="55" height="55" />
 				<div class={typography({ variant: 'heading4' })}>สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย</div>
 
 				<div class="flex gap-3">
