@@ -4,8 +4,8 @@ export const listVariants = tv({
 	base: 'rounded-lg p-4',
 	variants: {
 		variant: {
-			pink: 'bg-[#FFEBE7]',
-			grey: 'bg-[#F7F7F7]',
+			pink: 'bg-sucu-pink-05',
+			grey: 'bg-sucu-gray-light',
 			default: 'bg-white'
 		}
 	},
