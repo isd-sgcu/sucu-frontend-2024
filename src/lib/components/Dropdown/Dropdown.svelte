@@ -4,6 +4,7 @@
 	import { dropdownVariants, type DropdownProps } from '../../../styles/tailwind/dropdown';
 	import DropdownList from '$lib/components/Dropdown/DropdownList.svelte';
 	import { onDestroy, onMount } from 'svelte';
+	import { cn } from '$lib/utils';
 
 	export let items: string[] = [];
 	export let currentChoice: string | null = null;
@@ -64,13 +65,16 @@
 	});
 </script>
 
-<div class={`relative w-full ${outerClass}`}>
+<div class={cn('relative w-full', outerClass)} bind:this={dropdownRef}>
 	<button
-		class={`w-full px-4 py-3 flex flex-row justify-between items-center rounded-sm ${dropdownClass}`}
+		class={cn(
+			'w-full px-4 py-3 flex flex-row justify-between items-center rounded-sm',
+			dropdownClass
+		)}
 		on:click={handleClickOpen}
 	>
 		<span>{currentChoice || placeholder}</span>
-		<Fa icon={faChevronDown} class={`w-6 h-6 transition-transform ${isOpen && 'rotate-180'}`} />
+		<Fa icon={faChevronDown} class={cn('w-6 h-6 transition-transform', isOpen && 'rotate-180')} />
 	</button>
 
 	{#if isOpen}
