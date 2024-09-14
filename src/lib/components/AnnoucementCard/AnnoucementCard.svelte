@@ -4,7 +4,6 @@
 	import dayjs from 'dayjs';
 	import buddhistEra from 'dayjs/plugin/buddhistEra';
 	import 'dayjs/locale/th';
-	import pic from '../../assets/images/thumbnail.png';
 
 	dayjs.extend(buddhistEra);
 
@@ -21,7 +20,6 @@
 	function trimTitle(titleString: string): string {
 		return titleString.length > 100 ? titleString.substring(0, 100) + '...' : titleString;
 	}
-
 </script>
 
 <a
@@ -29,12 +27,11 @@
 	target="_blank"
 	class="h-[450px] w-[300px] bg-white text-sucu-gray-dark rounded shadow-card-shadow hover:shadow-card-shadow-hover transition-shadow flex flex-col items-center"
 >
-
-	<div class='p-3 h-[300px] w-[300px]'>
-		<img src={pic} alt={title} width="276" height="276" class="w-[100%] rounded" />
+	<div class="p-3 h-[300px] w-[300px]">
+		<img src={imageURL} alt={title} width="276" height="276" class="w-[100%] rounded" />
 	</div>
 
-	<div class='p-4 h-[150px] w-[300px] flex flex-col justify-between'>
+	<div class="p-4 h-[150px] w-[300px] flex flex-col justify-between">
 		<div
 			class={cn(
 				`max-md:${typography({ variant: 'body-medium' })}`,

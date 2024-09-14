@@ -12,6 +12,7 @@
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer/Footer.svelte';
 	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
+	import thumbnail from '../assets/images/thumbnail.png';
 
 	modalShow.set(false);
 
@@ -64,12 +65,13 @@
 	}
 
 	const annoucementCard = Array(6).fill({
-		imageURL: "https://b1157417.smushcdn.com/1157417/wp-content/uploads/2024/07/cow-close-up-of-dairy-cattle-825x550.jpg?lossy=1&strip=1&webp=0",
-		title: "ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565",
-		createdAt: "2024-07-04",
-		createdBy: "สภานิสิต",
-		linkHref: "https://www.google.com"
-  	});
+		imageURL: thumbnail,
+		title:
+			'ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565',
+		createdAt: '2024-07-04',
+		createdBy: 'สภานิสิต',
+		linkHref: 'https://www.google.com'
+	});
 </script>
 
 <div>
@@ -223,10 +225,10 @@
 	</section>
 
 	<!-- AnnoucementCard.svelte -->
-	<section class='section'>
+	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Announcement Card</h2>
 
-		<div class='flex gap-6 px-10 pb-10 pt-5 overflow-auto'>
+		<div class="flex gap-6 px-10 pb-10 pt-5 overflow-auto">
 			{#each annoucementCard as card}
 				<AnnoucementCard
 					imageURL={card.imageURL}
@@ -238,9 +240,8 @@
 			{/each}
 		</div>
 	</section>
-	
-	<Footer />
 
+	<Footer />
 </div>
 
 <style>
