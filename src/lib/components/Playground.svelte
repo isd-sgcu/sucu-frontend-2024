@@ -4,6 +4,10 @@
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import { modalShow } from './Modal/store';
+	import TabsRoot from './Tabs/TabsRoot.svelte';
+	import TabsList from './Tabs/TabsList.svelte';
+	import TabsTrigger from './Tabs/TabsTrigger.svelte';
+	import TabsContent from './Tabs/TabsContent.svelte';
 	import Navbar from './Navbar.svelte';
 
 	modalShow.set(false);
@@ -159,6 +163,26 @@
 		{#if modalShow}
 			<Modal />
 		{/if}
+	</section>
+
+	<section class="section">
+		<TabsRoot defaultActiveTab="all">
+			<TabsList>
+				<TabsTrigger value="all">ทั้งหมด</TabsTrigger>
+				<TabsTrigger value="sgcu">อบจ.</TabsTrigger>
+				<TabsTrigger value="sccu">สภานิสิต</TabsTrigger>
+			</TabsList>
+
+			<TabsContent value="all">
+				<p>This is the all tab content.</p>
+			</TabsContent>
+			<TabsContent value="sgcu">
+				<p>This is the sgcu tab content.</p>
+			</TabsContent>
+			<TabsContent value="sccu">
+				<p>This is the sccu tab content.</p>
+			</TabsContent>
+		</TabsRoot>
 	</section>
 </div>
 
