@@ -3,13 +3,14 @@
 	import Button from './Button.svelte';
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
-	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { modalShow } from './Modal/store';
+	import List from './List/List.svelte';
 	import TabsRoot from './Tabs/TabsRoot.svelte';
 	import TabsList from './Tabs/TabsList.svelte';
 	import TabsTrigger from './Tabs/TabsTrigger.svelte';
 	import TabsContent from './Tabs/TabsContent.svelte';
 	import Navbar from './Navbar.svelte';
+	import Footer from './Footer/Footer.svelte';
 
 	modalShow.set(false);
 
@@ -184,6 +185,32 @@
 				<p>This is the sccu tab content.</p>
 			</TabsContent>
 		</TabsRoot>
+	</section>
+
+	<section class="section mb-5 gap-y-5 flex flex-col">
+		<h2 class="font-bold text-2xl mb-4">List</h2>
+
+		<List
+			variant="pink"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
+		<List
+			variant="grey"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
+		<List
+			variant="default"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
 	</section>
 
 	<Footer />
