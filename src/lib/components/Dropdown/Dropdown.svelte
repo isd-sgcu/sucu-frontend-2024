@@ -3,7 +3,7 @@
 	import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 	import { dropdownVariants, type DropdownProps } from '../../../styles/tailwind/dropdown';
 	import DropdownList from '$lib/components/Dropdown/DropdownList.svelte';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	export let items: string[] = [];
 	export let currentChoice: string | null = null;
@@ -45,7 +45,23 @@
 		isOpen = !isOpen;
 	}
 
-	$: console.log(isOpen);
+	let dropdownRef: HTMLElement;
+	function handleClickOutside(event: MouseEvent) {
+		if (dropdownRef && !dropdownRef.contains(event.target as Node)) {
+			isOpen = false;
+		}
+	}
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.addEventListener('click', handleClickOutside);
+		}
+	});
+
+	onDestroy(() => {
+		if (typeof document !== 'undefined') {
+			document.removeEventListener('click', handleClickOutside);
+		}
+	});
 </script>
 
 <div class={`relative w-full ${outerClass}`}>
