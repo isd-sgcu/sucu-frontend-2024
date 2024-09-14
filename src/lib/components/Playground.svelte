@@ -11,6 +11,10 @@
 	import TabsContent from './Tabs/TabsContent.svelte';
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer/Footer.svelte';
+	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
+	import sapanisit from '../assets/images/sapanisit.png';
+  	import smo from '../assets/images/smo.png';
+  	import sgcu from '../assets/images/sgcu.png';
 
 	modalShow.set(false);
 
@@ -61,6 +65,24 @@
 			? [...selectedTabs, tab.label]
 			: selectedTabs.filter((label) => label !== tab.label);
 	}
+
+	const organization = [
+    {
+        imageURL: smo,
+        orgName: "สโมสรนิสิต จุฬาลงกรณ์มหาวิทยาลัย",
+        linkHref: "https://www.google.com"
+    },
+    {
+        imageURL: sgcu,
+        orgName: "องค์การบริหารสโมสรนิสิต จุฬาลงกรณ์มหาวิทยาลัย (อบจ.)",
+        linkHref: "https://www.chula.ac.th/academics/academic-units/sgcu/"
+    },
+    {
+        imageURL: sapanisit,
+        orgName: "สภานิสิต จุฬาลงกรณ์มหาวิทยาลัย",
+        linkHref: "https://www.sa.chula.ac.th/%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%99%E0%B8%B4%E0%B8%AA%E0%B8%B4%E0%B8%95/"
+    }
+];
 </script>
 
 <div>
@@ -211,6 +233,21 @@
 			createdBy="Admin"
 			linkHref="https://google.com"
 		/>
+	</section>
+
+	<!-- OrganizationCard.svelte -->
+	<section class='section'>
+		<h2 class="font-bold text-2xl mb-4">Organization Card</h2>
+
+		<div class='flex gap-6 px-10 pb-10 pt-5 overflow-auto'>
+			{#each organization as card}
+				<OrganizationCard
+					imageURL={card.imageURL}
+					orgName={card.orgName}
+					linkHref={card.linkHref}
+				/>
+			{/each}
+		</div>
 	</section>
 
 	<Footer />
