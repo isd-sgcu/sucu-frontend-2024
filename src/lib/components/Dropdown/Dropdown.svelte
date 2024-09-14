@@ -11,6 +11,7 @@
 	let isOpen = false;
 	let hasSelected = false;
 	let currentVariant: DropdownProps['variant'] = 'transparent';
+	let dropdownClass: string = dropdownVariants({ variant: currentVariant });
 	let placeholder: string = 'Select Item';
 	let saveChoice: string | null = null;
 
@@ -20,6 +21,15 @@
 	});
 
 	$: {
+		if (currentChoice) {
+			isOpen = false;
+			if (currentChoice !== saveChoice) {
+				hasSelected = true;
+			}
+		}
+	}
+
+	$: {
 		if (isOpen) {
 			currentVariant = 'focus';
 		} else if (hasSelected) {
@@ -27,15 +37,8 @@
 		} else {
 			currentVariant = 'transparent';
 		}
-	}
 
-	$: dropdownClass = dropdownVariants({ variant: currentVariant });
-
-	$: if (currentChoice) {
-		isOpen = false;
-		if (currentChoice !== saveChoice) {
-			hasSelected = true;
-		}
+		dropdownClass = dropdownVariants({ variant: currentVariant });
 	}
 
 	function handleClickOpen() {
