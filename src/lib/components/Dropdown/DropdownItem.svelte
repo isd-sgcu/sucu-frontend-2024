@@ -9,7 +9,6 @@
 	export let currentSelectedChoice: string | null = null;
 
 	let currentVariant: DropdownItemProps['variant'] = 'default';
-	let isHover: boolean = false;
 	let isSelected = false;
 
 	$: isSelected = currentSelectedChoice === text;
@@ -17,8 +16,6 @@
 	$: {
 		if (disabled) {
 			currentVariant = 'disabled';
-		} else if (isHover) {
-			currentVariant = 'hover';
 		} else if (isSelected) {
 			currentVariant = 'pressed';
 		} else {
@@ -27,25 +24,11 @@
 	}
 
 	function handleClick() {
-		isHover = false;
-		currentSelectedChoice = text;
-	}
-	function handleMouseEnter() {
-		if (currentVariant === 'default') isHover = true;
-	}
-	function handleMouseLeave() {
-		isHover = false;
 	}
 
-	$: dropdownClass = dropdownItemVariants({ variant: isHover ? 'hover' : currentVariant });
+	$: dropdownClass = dropdownItemVariants({ variant: currentVariant });
 </script>
 
-<button
-	class={dropdownClass}
-	on:click={handleClick}
-	on:mouseenter={handleMouseEnter}
-	on:mouseleave={handleMouseLeave}
-	{disabled}
->
+<button class={dropdownClass} on:click={handleClick} {disabled}>
 	{text}
 </button>
