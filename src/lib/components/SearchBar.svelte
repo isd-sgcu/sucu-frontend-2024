@@ -11,9 +11,9 @@
 </script>
 
 <div
-	class={`w-full flex flex-row items-center gap-3 px-4 py-3 rounded-sm border ${isFocus ? 'border-sucu-pink-03' : 'border-sucu-gray-light'}`}
+	class="search-bar"
 >
-	<button on:click={handleClickIcon}>
+	<button on:click={handleClickIcon} type="button">
 		<Fa icon={faSearch} class="w-5 h-5" />
 	</button>
 
@@ -25,3 +25,13 @@
 		bind:this={inputRef}
 	/>
 </div>
+
+<style>
+	.search-bar {
+		@apply w-full flex items-center gap-3 px-4 py-3 rounded-sm border border-sucu-gray-light;
+	}
+
+	.search-bar:focus-within {
+		@apply border-sucu-pink-03;
+	}
+</style>
