@@ -42,6 +42,7 @@
 		"clsx": "^2.1.1",
 		"svelte-fa": "^4.0.2",
 		"tailwind-merge": "^2.5.2",
-		"tailwind-variants": "^0.2.1"
+		"tailwind-variants": "^0.2.1",
+		"vite-plugin-svelte-svg": "^2.3.0"
 	}
 }
