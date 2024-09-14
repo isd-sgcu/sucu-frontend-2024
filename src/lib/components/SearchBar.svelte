@@ -10,9 +10,7 @@
 	}
 </script>
 
-<div
-	class="search-bar"
->
+<div class="search-bar">
 	<button on:click={handleClickIcon} type="button">
 		<Fa icon={faSearch} class="w-5 h-5" />
 	</button>
