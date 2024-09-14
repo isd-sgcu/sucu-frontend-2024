@@ -4,8 +4,7 @@
 	import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 	import Sccusvg from '$lib/assets/icons/sccu.svg';
 	import Fa from 'svelte-fa';
-
-	console.log('svg', Sccusvg);
+	import { cn } from '$lib/utils/cn';
 </script>
 
 <div class="h-auto w-full py-[64px] px-[135px] max-md:p-[70px] gap-6 bg-sucu-pink-05">
@@ -56,29 +55,33 @@
 	</div>
 
 	<div class="flex flex-col md:hidden">
-		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>ประกาศ</div>
+		<div class={cn(`max-md:text-center w-full`, typography({ variant: 'body-normal' }))}>
+			ประกาศ
+		</div>
 		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>เอกสาร</div>
+		<div class={cn(`max-md:text-center w-full`, typography({ variant: 'body-normal' }))}>
+			เอกสาร
+		</div>
 		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+		<div class={cn(`max-md:text-center w-full`, typography({ variant: 'body-normal' }))}>
 			งบประมาณและสถิติ
 		</div>
 		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+		<div class={cn(`max-md:text-center w-full`, typography({ variant: 'body-normal' }))}>
 			สโมสรนิสิตฯ
 		</div>
 		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+		<div class={cn(`max-md:text-center w-full`, typography({ variant: 'body-normal' }))}>
 			สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย
 		</div>
 		<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-		<div class={`max-md:text-center w-full ${typography({ variant: 'body-normal' })}`}>
+		<div class={cn(`max-md:text-center w-full`, typography({ variant: 'body-normal' }))}>
 			องค์การบริหารสโมสรนิสิตจุฬาฯ (อบจ.)
 		</div>
 	</div>
 
 	<div class="h-[2px] bg-gray-300 w-full my-5"></div>
-	<div class={`max-md:text-center w-full max-md:${typography({ variant: 'body-small' })}`}>
+	<div class={cn(`max-md:text-center w-full`, `max-md:typography({ variant: 'body-small' })`)}>
 		© 2024 SGCU. All rights reserved Develop by ISD
 	</div>
 </div>
