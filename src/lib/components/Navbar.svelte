@@ -1,4 +1,8 @@
 <script>
+	import Fa from 'svelte-fa';
+	import sucuLogo from '/src/lib/icons/sucu_logo_1.svg';
+	import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 	let isMenuOpen = false;
 	const toggleMenu = () => {
 		isMenuOpen = !isMenuOpen;
@@ -13,33 +17,21 @@
 </script>
 
 <nav class="bg-sucu-pink-01 p-4 px-11 flex justify-between items-center">
-	<div class="flex items-center space-x-3 z-50">
-		<img alt="Logo" class="h-12" src="/src/lib/icons/sucu_logo_1.svg" />
+	<a href="/" class="flex items-center space-x-3 z-50">
+		<img alt="Logo" class="h-12" src={sucuLogo} />
 		<div class="hidden md:block text-white font-bold">
 			<p>สโมสรนิสิต</p>
 			<p>จุฬาลงกรณ์มหาวิทยาลัย</p>
 		</div>
-	</div>
+	</a>
 
 	{#if isMenuOpen}
-		<button
-			class="text-white md:hidden text-4xl self-end focus:outline-none z-50"
-			on:click={toggleMenu}
-		>
+		<button class="text-white md:hidden text-4xl focus:outline-none z-50" on:click={toggleMenu}>
 			&times;
 		</button>
 	{:else}
 		<button class="block md:hidden text-white focus:outline-none z-50" on:click={toggleMenu}>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="h-8 w-8"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-				stroke-width="2"
-			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-			</svg>
+			<Fa icon={faBars} class="text-2xl" />
 		</button>
 	{/if}
 
