@@ -19,7 +19,6 @@ jobs:
         run: |
           git remote add personal $PERSONAL_REPO
           git push personal HEAD:dev --force
-
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
