@@ -33,7 +33,7 @@ jobs:
 
       - name: Push to Personal Repo
         run: |
-          git remote add personal https://github.com/korawit-alt/sucu-frontend-preview.git
+          git remote add personal ${{ secrets.PERSONAL_REPO}}
           git push personal HEAD:dev --force
 
       - name: Deploy to Vercel
