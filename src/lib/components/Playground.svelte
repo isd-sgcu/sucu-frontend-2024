@@ -4,6 +4,10 @@
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import { modalShow } from './Modal/store';
+	import DropdownItem from '$lib/components/Dropdown/DropdownItem.svelte';
+	import SearchBar from '$lib/components/SearchBar.svelte';
+	import DropdownList from '$lib/components/Dropdown/DropdownList.svelte';
+	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
 	import List from './List/List.svelte';
 	import TabsRoot from './Tabs/TabsRoot.svelte';
 	import TabsList from './Tabs/TabsList.svelte';
@@ -61,6 +65,18 @@
 			? [...selectedTabs, tab.label]
 			: selectedTabs.filter((label) => label !== tab.label);
 	}
+
+	let searchValue = '';
+	let listValue: string | null = null;
+	let dropdownValue: string | null = null;
+	let choiceList: string[] = [
+		'ล่าสุด',
+		'ปี 2567',
+		'ปี 2566',
+		'ปี 2565',
+		'ปี 2564',
+		'ปีย้าวยาวววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววว'
+	];
 </script>
 
 <div>
@@ -165,6 +181,42 @@
 		{#if modalShow}
 			<Modal />
 		{/if}
+	</section>
+
+	<section class="section">
+		<h2 class="font-bold text-2xl mb-4">Search & Dropdown</h2>
+
+		<div class="flex flex-col gap-4">
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl">SearchBar</h3>
+				<SearchBar bind:value={searchValue} />
+				<p>Search Value : {searchValue == '' ? 'no value' : searchValue}</p>
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl mb-2">DropdownItem</h3>
+
+				<div>
+					<DropdownItem text="Hello"></DropdownItem>
+					<DropdownItem text="Hello" disabled></DropdownItem>
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl mb-2">DropdownList</h3>
+
+				<DropdownList bind:currentChoice={listValue} items={choiceList} />
+				<p>List Value : {listValue || 'no value'}</p>
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl mb-2">Dropdown</h3>
+
+				<Dropdown items={choiceList} bind:currentChoice={dropdownValue} outerClass="w-64" />
+
+				<p>Dropdown Value : {dropdownValue || 'no value'}</p>
+			</div>
+		</div>
 	</section>
 
 	<section class="section">
