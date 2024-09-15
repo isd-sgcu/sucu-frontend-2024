@@ -15,12 +15,12 @@
 				<img src={Sccusvg} alt="sccu icon" width="55" height="55" />
 				<div class={typography({ variant: 'heading4' })}>สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย</div>
 
-				<div class="flex gap-3">
+				<div class="flex gap-3 items-center">
 					<Fa icon={faFacebook} />
 					<div class={typography({ variant: 'body-normal' })}>สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย</div>
 				</div>
 
-				<div class="flex gap-3">
+				<div class="flex gap-3 items-center">
 					<Fa icon={faInstagram} />
 
 					<div class={typography({ variant: 'body-normal' })}>sapanisitchula</div>
@@ -31,14 +31,14 @@
 
 				<div class={typography({ variant: 'heading4' })}>สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย</div>
 
-				<div class="flex gap-3">
+				<div class="flex gap-3 items-center">
 					<Fa icon={faFacebook} />
 					<div class={typography({ variant: 'body-normal' })}>
 						องค์การบริหารสโมสรนิสิตจุฬาลงกรณ์มหาวิทยาลัย (อบจ.)
 					</div>
 				</div>
 
-				<div class="flex gap-3">
+				<div class="flex gap-3 items-center">
 					<Fa icon={faInstagram} />
 
 					<div class={typography({ variant: 'body-normal' })}>sgcu.chula</div>
