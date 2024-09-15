@@ -3,7 +3,7 @@ name: Sync and Deploy to Vercel
 on:
   push:
     branches:
-      - feat/deploy-preview
+      - dev
 
 jobs:
   sync-and-deploy:
