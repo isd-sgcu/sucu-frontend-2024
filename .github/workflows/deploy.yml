@@ -23,8 +23,8 @@ jobs:
 
       - name: Set up Git user
         run: |
-          git config --global user.name "Hello"  
-          git config --global user.email "test@example.com"
+          git config --global user.name "SUCU Preview Bot"  
+          git config --global user.email "sucu-preview@gmail.com"
 
       - name: Configure Git to use Personal Access Token
         run: |
