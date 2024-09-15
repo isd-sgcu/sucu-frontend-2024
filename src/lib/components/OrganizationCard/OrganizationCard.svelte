@@ -38,7 +38,7 @@
 			<div class={cn(typography({ variant: 'heading4' }), 'leading-6 whitespace-pre-line')}>
 				{formatOrgName(orgName)}
 			</div>
-			<div class="h-[32px] w-[32px] absolute bottom-0 right-0">
+			<div class="h-[32px] w-[32px] absolute bottom-0 right-0 flex items-center justify-center">
 				<img src={arrowRight} alt="arrow" width="24" height="auto" />
 			</div>
 		</div>
