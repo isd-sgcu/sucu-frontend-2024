@@ -239,7 +239,7 @@
 	<section class='section'>
 		<h2 class="font-bold text-2xl mb-4">Organization Card</h2>
 
-		<div class='flex gap-6 px-10 pb-10 pt-5 overflow-auto'>
+		<div class='flex gap-6 px-10 pb-10 pt-5 overflow-auto flex justify-center'>
 			{#each organization as card}
 				<OrganizationCard
 					imageURL={card.imageURL}
