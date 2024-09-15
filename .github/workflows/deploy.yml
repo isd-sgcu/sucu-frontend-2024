@@ -12,16 +12,33 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Remove default git credentials
+        run: |
+          git config --global --unset credential.helper || true
+          rm -f ~/.git-credentials
+
+      - name: Set up Git user
+        run: |
+          git config --global user.name "SUCU Preview Bot"  
+          git config --global user.email "sucu-preview@gmail.com"
+
+      - name: Configure Git to use Personal Access Token
+        run: |
+          echo "https://x-access-token:${{ secrets.PERSONAL_GITHUB_TOKEN }}@github.com" > ~/.git-credentials
+          git config --global credential.helper store
 
       - name: Push to Personal Repo
-        env:
-          PERSONAL_REPO: https://x-access-token:${{ secrets.PERSONAL_GITHUB_TOKEN }}@github.com/korawit-alt/sucu-frontend-preview.git
         run: |
-          git remote add personal $PERSONAL_REPO
+          git remote add personal ${{ secrets.PERSONAL_REPO}}
           git push personal HEAD:dev --force
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: '--prod --yes'
           working-directory: '.'
