@@ -3,25 +3,35 @@ name: Sync and Deploy to Vercel
 on:
   push:
     branches:
-      - dev
+      - feat/deploy-preview
 
 jobs:
   sync-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout Code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 
 
-      - name: Push to Personal Repo
-        env:
-          PERSONAL_REPO: https://x-access-token:${{ secrets.PERSONAL_GITHUB_TOKEN }}@github.com/korawit-alt/sucu-frontend-preview.git
-        run: |
-          git remote add personal $PERSONAL_REPO
-          git push personal HEAD:dev --force
+    - name: Set up Git user
+      run: |
+        git config user.name "korawit-alt" 
+        git config user.email "test@gmail.com"
 
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          working-directory: '.'
+    - name: Mask Personal Access Token
+      run: |
+        echo "::add-mask::${{ secrets.PERSONAL_GITHUB_TOKEN }}"
+
+    - name: Push to Personal Repo
+      run: |
+        git remote add personal https://x-access-token:${{ secrets.PERSONAL_GITHUB_TOKEN }}@github.com/YOUR_USERNAME/YOUR_PERSONAL_REPO.git
+        git push personal HEAD:main --force
+
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-args: '--prod'  # Deploy to production
+        working-directory: '.'  # Adjust if your project is in a subdirectory
