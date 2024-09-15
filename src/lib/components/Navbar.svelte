@@ -14,7 +14,7 @@
 
 <nav class="bg-sucu-pink-01 p-4 px-11 flex justify-between items-center">
 	<div class="flex items-center space-x-3 z-50">
-		<img src="/sucu_logo_1.svg" alt="Logo" class="h-12" />
+		<img alt="Logo" class="h-12" src="/src/lib/icons/sucu_logo_1.svg" />
 		<div class="hidden md:block text-white font-bold">
 			<p>สโมสรนิสิต</p>
 			<p>จุฬาลงกรณ์มหาวิทยาลัย</p>
@@ -22,7 +22,7 @@
 	</div>
 
 	{#if isMenuOpen}
-		<button class="text-white text-4xl self-end focus:outline-none z-50" on:click={toggleMenu}>
+		<button class="text-white md:hidden text-4xl self-end focus:outline-none z-50" on:click={toggleMenu}>
 			&times;
 		</button>
 	{:else}
@@ -47,9 +47,9 @@
 	</div>
 
 	<div
-		class="fixed inset-0 bg-sucu-pink-01 flex flex-col items-end justify-end space-y-8 p-8 text-white transform duration-300 ease-in-out"
-		class:menu-open={isMenuOpen}
+		class="fixed inset-0 bg-sucu-pink-01 md:hidden flex flex-col items-end h-[800px] justify-end space-y-8 p-8 text-white transform duration-300 ease-in-out"
 		class:menu-closed={!isMenuOpen}
+		class:menu-open={isMenuOpen}
 	>
 		{#each navItems as item}
 			<a href={item.href} class="text-white text-lg hover:underline">{item.name}</a>
@@ -58,10 +58,11 @@
 </nav>
 
 <style>
-	.menu-open {
-		transform: translateY(-60%);
-	}
-	.menu-closed {
-		transform: translateY(-100%);
-	}
+    .menu-open {
+        transform: translateY(-60%);
+    }
+
+    .menu-closed {
+        transform: translateY(-100%);
+    }
 </style>
