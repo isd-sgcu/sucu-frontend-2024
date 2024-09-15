@@ -22,7 +22,10 @@
 	</div>
 
 	{#if isMenuOpen}
-		<button class="text-white md:hidden text-4xl self-end focus:outline-none z-50" on:click={toggleMenu}>
+		<button
+			class="text-white md:hidden text-4xl self-end focus:outline-none z-50"
+			on:click={toggleMenu}
+		>
 			&times;
 		</button>
 	{:else}
@@ -58,11 +61,11 @@
 </nav>
 
 <style>
-    .menu-open {
-        transform: translateY(-60%);
-    }
+	.menu-open {
+		transform: translateY(-60%);
+	}
 
-    .menu-closed {
-        transform: translateY(-100%);
-    }
+	.menu-closed {
+		transform: translateY(-100%);
+	}
 </style>
