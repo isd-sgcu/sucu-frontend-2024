@@ -31,7 +31,7 @@
 
 				<div class={typography({ variant: 'heading4' })}>สภานิสิตจุฬาลงกรณ์มหาวิทยาลัย</div>
 
-				<div class="flex gap-3  items-center">
+				<div class="flex gap-3 items-center">
 					<Fa icon={faFacebook} />
 					<div class={typography({ variant: 'body-normal' })}>
 						องค์การบริหารสโมสรนิสิตจุฬาลงกรณ์มหาวิทยาลัย (อบจ.)
