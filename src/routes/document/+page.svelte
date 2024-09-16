@@ -134,7 +134,7 @@
 				currentPage={currentPages.sgcu}
 				changePage={(variant, direction) => changePage(variant, direction)}
 				documents={paginatedSGCU}
-				totalPages={totalPages.sccu}
+				totalPages={totalPages.sgcu}
 				variantKey="sgcu"
 			/>
 		</TabsContent>
