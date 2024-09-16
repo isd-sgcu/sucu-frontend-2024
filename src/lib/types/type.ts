@@ -1,0 +1,5 @@
+export enum Type {
+	ANNOUNCEMENT = 'ANNOUNCEMENT',
+	BUDGET = 'BUDGET',
+	STATISTIC = 'STATISTIC'
+}
