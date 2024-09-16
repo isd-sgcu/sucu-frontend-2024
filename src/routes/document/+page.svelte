@@ -112,8 +112,8 @@
 </script>
 
 <MaxWidthWrapper class="mt-10 space-y-12">
-	<div class="">
-		<div class="flex items-center">
+	<div class="flex flex-col gap-3 items-start">
+		<div class="flex items-center gap-4">
 			<button on:click={() => history.back()} class="lg:relative -left-60 top-2">
 				<Fa icon={faCircleArrowLeft} size="lg" />
 			</button>
