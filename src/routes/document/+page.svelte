@@ -12,6 +12,7 @@
 	import { Role, type Document } from '$lib/types';
 	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
 	import DocumentList from './DocumentList.svelte';
+	import TabCapsule from '$lib/components/TabCapsule.svelte';
 
 	export let data;
 	const { documents } = data;
@@ -95,22 +96,35 @@
 			currentPages[tab]--;
 		}
 	}
+
+	let selectedTabs: string[] = [];
+	let tags = ['สภานิสิตฯ', 'สำนักเลขาธิการ', 'กมธ. สามัญ', 'กมธ. วิสามัญ'];
+	let tabCapsules = tags.map((label) => ({ label, active: false }));
+	function toggle(index: number) {
+		tabCapsules = tabCapsules.map((tab, i) =>
+			i === index ? { ...tab, active: !tab.active } : tab
+		);
+		const tab = tabCapsules[index];
+		selectedTabs = tab.active
+			? [...selectedTabs, tab.label]
+			: selectedTabs.filter((label) => label !== tab.label);
+	}
 </script>
 
-<MaxWidthWrapper class="mt-10 space-y-3">
-	<div class="flex items-center gap-3">
-		<button on:click={() => history.back()} class="lg:relative -left-60">
-			<Fa icon={faCircleArrowLeft} size="lg" />
-		</button>
-		<h1 class={cn(typography({ variant: 'heading3' }), 'md:text-5xl lg:order-first')}>เอกสาร</h1>
+<MaxWidthWrapper class="mt-10 space-y-12">
+	<div class="">
+		<div class="flex items-center">
+			<button on:click={() => history.back()} class="lg:relative -left-60 top-2">
+				<Fa icon={faCircleArrowLeft} size="lg" />
+			</button>
+			<h1 class={cn(typography({ variant: 'heading3' }), 'md:text-5xl lg:order-first')}>เอกสาร</h1>
+		</div>
+		<p class="text-sucu-gray lg:w-full">
+			เอกสารทั้งหมดในนามสโมสรนิสิตจุฬาฯ อบจ. และสภานิสิตจุฬาฯ ซึ่งเปิดเผยให้นิสิตได้อ่านโดยทั่วกัน
+		</p>
 	</div>
 
-	<p class="text-sucu-gray lg:w-full">
-		เอกสารทั้งหมดในนามสโมสรนิสิตจุฬาฯ อบจ. และสภานิสิตจุฬาฯ ซึ่งเปิดเผยให้นิสิตได้อ่านโดยทั่วกัน
-	</p>
-
 	<SearchBar bind:value={searchValue} />
-	<Dropdown items={['All', ...years]} bind:currentChoice={dropdownValue} outerClass="w-64 my-6" />
 
 	<TabsRoot defaultActiveTab="all">
 		<TabsList>
@@ -118,6 +132,16 @@
 			<TabsTrigger value="sgcu">อบจ.</TabsTrigger>
 			<TabsTrigger value="sccu">สภานิสิต</TabsTrigger>
 		</TabsList>
+		<Dropdown
+			items={['All', ...years]}
+			bind:currentChoice={dropdownValue}
+			outerClass="w-64 my-12"
+		/>
+		<div class="flex flex-wrap items-center gap-2 my-12">
+			{#each tabCapsules as tab, i}
+				<TabCapsule active={tab.active} label={tab.label} on:click={() => toggle(i)} />
+			{/each}
+		</div>
 
 		<TabsContent value="all" class="space-y-2">
 			<DocumentList
