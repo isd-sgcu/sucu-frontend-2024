@@ -1,4 +1,4 @@
-export enum Type {
+export enum DocumentType {
 	ANNOUNCEMENT = 'ANNOUNCEMENT',
 	BUDGET = 'BUDGET',
 	STATISTIC = 'STATISTIC'

@@ -1,6 +1,6 @@
 import { Role } from '$lib/types';
 import type { Document, User } from '$lib/types';
-import { Type } from '$lib/types/type';
+import { DocumentType } from '$lib/types/DocumentType';
 import type { PageLoad } from './$types';
 import 'dayjs/locale/th';
 import dayjs from 'dayjs';
@@ -38,7 +38,7 @@ export const load: PageLoad = async () => {
 			title: 'เอกสารลับจากดัมเบิลดอร์',
 			content: 'เนื้อหาของเอกสารลับจากดัมเบิลดอร์',
 			user_id: sgcu_admin.id,
-			type_id: Type.ANNOUNCEMENT,
+			type_id: DocumentType.ANNOUNCEMENT,
 			created_at: created_at_3,
 			updated_at,
 			author: sgcu_admin
@@ -48,7 +48,7 @@ export const load: PageLoad = async () => {
 			title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต 00',
 			content: 'เนื้อหาของประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต',
 			user_id: sccu_admin.id,
-			type_id: Type.ANNOUNCEMENT,
+			type_id: DocumentType.ANNOUNCEMENT,
 			created_at: created_at_4,
 			updated_at,
 			author: sccu_admin
@@ -58,7 +58,7 @@ export const load: PageLoad = async () => {
 			title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต 01',
 			content: 'เนื้อหาของประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต',
 			user_id: sgcu_admin.id,
-			type_id: Type.ANNOUNCEMENT,
+			type_id: DocumentType.ANNOUNCEMENT,
 			created_at: created_at_4,
 			updated_at,
 			author: sgcu_admin
@@ -68,7 +68,7 @@ export const load: PageLoad = async () => {
 			title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต 02',
 			content: 'เนื้อหาของประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต',
 			user_id: sccu_admin.id,
-			type_id: Type.BUDGET,
+			type_id: DocumentType.BUDGET,
 			created_at: created_at_1,
 			updated_at,
 			author: sccu_admin
@@ -78,7 +78,7 @@ export const load: PageLoad = async () => {
 			title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต 03',
 			content: 'เนื้อหาของประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต',
 			user_id: sccu_admin.id,
-			type_id: Type.STATISTIC,
+			type_id: DocumentType.STATISTIC,
 			created_at: created_at_1,
 			updated_at,
 			author: sgcu_admin
@@ -88,7 +88,7 @@ export const load: PageLoad = async () => {
 			title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต 04',
 			content: 'เนื้อหาของประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิต',
 			user_id: sccu_admin.id,
-			type_id: Type.STATISTIC,
+			type_id: DocumentType.STATISTIC,
 			created_at: created_at_1,
 			updated_at,
 			author: sgcu_admin
