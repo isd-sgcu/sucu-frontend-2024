@@ -12,13 +12,12 @@
 	import { Role, type Document } from '$lib/types';
 	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
 	import DocumentList from './DocumentList.svelte';
-	import { writable } from 'svelte/store';
 
 	export let data;
 	const { documents } = data;
 
-	let searchValue = writable('');
-	let dropdownValue = writable('All');
+	let searchValue = '';
+	let dropdownValue = 'All';
 
 	let years = Array.from(new Set(documents.map((doc) => new Date(doc.created_at).getFullYear())))
 		.sort((a, b) => b - a)
@@ -45,6 +44,8 @@
 		paginatedAll = paginate(filteredDocuments('all'), currentPages.all, documentsPerPage);
 		paginatedSGCU = paginate(filteredDocuments('sgcu'), currentPages.sgcu, documentsPerPage);
 		paginatedSCCU = paginate(filteredDocuments('sccu'), currentPages.sccu, documentsPerPage);
+		searchValue = searchValue;
+		dropdownValue = dropdownValue;
 	}
 
 	const filteredDocuments = (tab: 'all' | 'sgcu' | 'sccu') => {
@@ -55,14 +56,14 @@
 
 		if (searchValue) {
 			filteredDocs = filteredDocs.filter((doc) =>
-				doc.title.toLowerCase().includes($searchValue.toLowerCase())
+				doc.title.toLowerCase().includes(searchValue.toLowerCase())
 			);
 		}
 
-		if (dropdownValue && $dropdownValue !== 'All') {
+		if (dropdownValue && dropdownValue !== 'All') {
 			filteredDocs = filteredDocs.filter((doc) => {
 				const year = new Date(doc.created_at).getFullYear().toString();
-				return year === $dropdownValue;
+				return year === dropdownValue;
 			});
 		}
 
@@ -98,7 +99,7 @@
 
 <MaxWidthWrapper class="mt-10 space-y-3">
 	<div class="flex items-center gap-3">
-		<button on:click={() => history.back()} class="lg:relative -left-52">
+		<button on:click={() => history.back()} class="lg:relative -left-60">
 			<Fa icon={faCircleArrowLeft} size="lg" />
 		</button>
 		<h1 class={cn(typography({ variant: 'heading3' }), 'md:text-5xl lg:order-first')}>เอกสาร</h1>
@@ -108,8 +109,8 @@
 		เอกสารทั้งหมดในนามสโมสรนิสิตจุฬาฯ อบจ. และสภานิสิตจุฬาฯ ซึ่งเปิดเผยให้นิสิตได้อ่านโดยทั่วกัน
 	</p>
 
-	<SearchBar bind:value={$searchValue} />
-	<Dropdown items={['All', ...years]} bind:currentChoice={$dropdownValue} outerClass="w-64 my-6" />
+	<SearchBar bind:value={searchValue} />
+	<Dropdown items={['All', ...years]} bind:currentChoice={dropdownValue} outerClass="w-64 my-6" />
 
 	<TabsRoot defaultActiveTab="all">
 		<TabsList>
