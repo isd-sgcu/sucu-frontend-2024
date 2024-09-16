@@ -38,12 +38,7 @@
 		{title}
 	</div>
 
-	<div
-		class={cn(
-			`max-md:${typography({ variant: 'body-small' })}`,
-			typography({ variant: 'body-normal' })
-		)}
-	>
+	<div class={cn(typography({ variant: 'body-small' }), 'md:text-base')}>
 		{formatDate(createdAt)} โดย {createdBy}
 	</div>
 </a>
