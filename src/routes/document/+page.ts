@@ -1,6 +1,6 @@
 import { Role } from '$lib/types';
 import type { Document, User } from '$lib/types';
-import { DocumentType } from '$lib/types/DocumentType';
+import { DocumentType } from '$lib/types';
 import type { PageLoad } from './$types';
 import 'dayjs/locale/th';
 import dayjs from 'dayjs';

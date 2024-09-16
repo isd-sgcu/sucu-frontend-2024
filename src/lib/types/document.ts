@@ -15,3 +15,9 @@ export type Document = {
 	// images: Attachment[];
 	// docs: Attachment[];
 };
+
+export enum DocumentType {
+	ANNOUNCEMENT = 'ANNOUNCEMENT',
+	BUDGET = 'BUDGET',
+	STATISTIC = 'STATISTIC'
+}
