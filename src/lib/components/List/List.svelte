@@ -22,13 +22,17 @@
 <a
 	href={linkHref}
 	target="_blank"
-	class={`h-auto w-full flex flex-col py-3 px-4 rounded ${listVariants({ variant })}`}
+	class={cn(
+		'h-auto w-full flex flex-col py-3 px-4',
+		listVariants({ variant }),
+		'hover:bg-sucu-pink-05'
+	)}
 >
 	<div
 		class={cn(
 			'text-ellipsis whitespace-nowrap overflow-hidden',
-			typography({ variant: 'body-large' }),
-			`max-md:${typography({ variant: 'body-normal' })}`
+			typography({ variant: 'body-normal' }),
+			'md:text-2xl'
 		)}
 	>
 		{title}
