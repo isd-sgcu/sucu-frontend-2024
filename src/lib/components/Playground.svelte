@@ -4,6 +4,7 @@
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import { modalShow } from './Modal/store';
+	import StatisticCard from './StatisticCard.svelte';
 
 	modalShow.set(false);
 
@@ -158,6 +159,14 @@
 			<Modal />
 		{/if}
 	</section>
+
+	<section class="section w-fit">
+		<h2 class="font-bold text-2xl mb-4">StatisticCard</h2>
+		<StatisticCard></StatisticCard>
+		<StatisticCard></StatisticCard>
+		<StatisticCard></StatisticCard>
+	</section>
+	
 </div>
 
 <style>
