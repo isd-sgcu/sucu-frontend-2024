@@ -42,7 +42,7 @@
 	</div>
 
 	<div
-		class="fixed inset-0 bg-sucu-pink-01 md:hidden flex flex-col items-end h-[800px] justify-end space-y-8 p-8 text-white transform duration-300 ease-in-out"
+		class="absolute inset-0 bg-sucu-pink-01 md:hidden flex flex-col items-end h-[800px] justify-end space-y-8 p-8 text-white transform duration-300 ease-in-out"
 		class:menu-closed={!isMenuOpen}
 		class:menu-open={isMenuOpen}
 	>
