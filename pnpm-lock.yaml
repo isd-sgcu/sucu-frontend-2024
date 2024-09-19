@@ -8,18 +8,30 @@ importers:
 
   .:
     dependencies:
+      '@fortawesome/fontawesome-svg-core':
+        specifier: ^6.6.0
+        version: 6.6.0
       '@fortawesome/free-brands-svg-icons':
+        specifier: ^6.6.0
+        version: 6.6.0
+      '@fortawesome/free-regular-svg-icons':
         specifier: ^6.6.0
         version: 6.6.0
       '@fortawesome/free-solid-svg-icons':
         specifier: ^6.6.0
         version: 6.6.0
+      '@fortawesome/svelte-fontawesome':
+        specifier: ^0.2.2
+        version: 0.2.2(@fortawesome/fontawesome-svg-core@6.6.0)(svelte@4.2.19)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
       svelte-fa:
         specifier: ^4.0.2
         version: 4.0.2(svelte@4.2.19)
+      svelte-feather-icons:
+        specifier: ^4.1.0
+        version: 4.1.0
       tailwind-merge:
         specifier: ^2.5.2
         version: 2.5.2
@@ -263,13 +275,27 @@ packages:
     resolution: {integrity: sha512-xyX0X9mc0kyz9plIyryrRbl7ngsA9jz77mCZJsUkLl+ZKs0KWObgaEBoSgQiYWAsSmjz/yjl0F++Got0Mdp4Rw==}
     engines: {node: '>=6'}
 
+  '@fortawesome/fontawesome-svg-core@6.6.0':
+    resolution: {integrity: sha512-KHwPkCk6oRT4HADE7smhfsKudt9N/9lm6EJ5BVg0tD1yPA5hht837fB87F8pn15D8JfTqQOjhKTktwmLMiD7Kg==}
+    engines: {node: '>=6'}
+
   '@fortawesome/free-brands-svg-icons@6.6.0':
     resolution: {integrity: sha512-1MPD8lMNW/earme4OQi1IFHtmHUwAKgghXlNwWi9GO7QkTfD+IIaYpIai4m2YJEzqfEji3jFHX1DZI5pbY/biQ==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/free-regular-svg-icons@6.6.0':
+    resolution: {integrity: sha512-Yv9hDzL4aI73BEwSEh20clrY8q/uLxawaQ98lekBx6t9dQKDHcDzzV1p2YtBGTtolYtNqcWdniOnhzB+JPnQEQ==}
     engines: {node: '>=6'}
 
   '@fortawesome/free-solid-svg-icons@6.6.0':
     resolution: {integrity: sha512-IYv/2skhEDFc2WGUcqvFJkeK39Q+HyPf5GHUrT/l2pKbtgEIv1al1TKd6qStR5OIwQdN1GZP54ci3y4mroJWjA==}
     engines: {node: '>=6'}
+
+  '@fortawesome/svelte-fontawesome@0.2.2':
+    resolution: {integrity: sha512-mOtb+KygPEol7wOgUbINVCyLVKTz7C36BKxTJ3D2VAuOpT4pW5FfCdzKYSg8mm5IuHQ5qFg/Ey9cX9ubYNGDYw==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      svelte: '>=3.x'
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -1440,6 +1466,9 @@ packages:
     peerDependencies:
       svelte: ^4.0.0
 
+  svelte-feather-icons@4.1.0:
+    resolution: {integrity: sha512-fcTL4VzEN4BoccQJjKiui0b9DWEsmO6zGpI0tQTJbthRtNrYheoU487zyA1BD8rj9kj6jbKGmGVo7zbSdRvMvA==}
+
   svelte-hmr@0.16.0:
     resolution: {integrity: sha512-Gyc7cOS3VJzLlfj7wKS0ZnzDVdv3Pn2IuVeJPk9m2skfhcu5bq3wtIZyQGggr7/Iim5rH5cncyQft/kRLupcnA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -1482,6 +1511,10 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  svelte@3.59.2:
+    resolution: {integrity: sha512-vzSyuGr3eEoAtT/A6bmajosJZIUWySzY2CzB3w2pgPvnkUjGqlDnsNnA0PMO+mMAhuyMul6C2uuZzY6ELSkzyA==}
+    engines: {node: '>= 8'}
 
   svelte@4.2.19:
     resolution: {integrity: sha512-IY1rnGr6izd10B0A8LqsBfmlT5OILVuZ7XsI0vdGPEvuonFV7NYEUK4dAkm9Zg2q0Um92kYjTpS1CAP3Nh/KWw==}
@@ -1796,13 +1829,26 @@ snapshots:
 
   '@fortawesome/fontawesome-common-types@6.6.0': {}
 
+  '@fortawesome/fontawesome-svg-core@6.6.0':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.6.0
+
   '@fortawesome/free-brands-svg-icons@6.6.0':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.6.0
+
+  '@fortawesome/free-regular-svg-icons@6.6.0':
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.6.0
 
   '@fortawesome/free-solid-svg-icons@6.6.0':
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.6.0
+
+  '@fortawesome/svelte-fontawesome@0.2.2(@fortawesome/fontawesome-svg-core@6.6.0)(svelte@4.2.19)':
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.6.0
+      svelte: 4.2.19
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
@@ -2968,6 +3014,10 @@ snapshots:
     dependencies:
       svelte: 4.2.19
 
+  svelte-feather-icons@4.1.0:
+    dependencies:
+      svelte: 3.59.2
+
   svelte-hmr@0.16.0(svelte@4.2.19):
     dependencies:
       svelte: 4.2.19
@@ -2984,6 +3034,8 @@ snapshots:
       postcss: 8.4.41
       postcss-load-config: 4.0.2(postcss@8.4.41)
       typescript: 5.5.4
+
+  svelte@3.59.2: {}
 
   svelte@4.2.19:
     dependencies:
