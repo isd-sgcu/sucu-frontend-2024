@@ -24,15 +24,15 @@
 
 	let isMobile = false;
 
-    const checkScreenSize = () => {
-        isMobile = window.innerWidth < 768;
-    };
+	const checkScreenSize = () => {
+		isMobile = window.innerWidth < 768;
+	};
 
-    onMount(() => {
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
-    });
+	onMount(() => {
+		checkScreenSize();
+		window.addEventListener('resize', checkScreenSize);
+		return () => window.removeEventListener('resize', checkScreenSize);
+	});
 </script>
 
 <a
@@ -42,13 +42,17 @@
 >
 	<div class="p-3 h-[300px] w-[300px] max-md:w-full max-md:h-auto max-md:p-2">
 		{#if imageURL || imageURL.length > 0}
-			<img src={imageURL} alt={title} width="276" height="276" class="w-[100%] rounded"/>
+			<img src={imageURL} alt={title} width="276" height="276" class="w-[100%] rounded" />
 		{:else}
-			<div class="w-[276px] h-[276px] max-md:w-full max-md:h-[124px] bg-gray-300 rounded animate-pulse"></div>
+			<div
+				class="w-[276px] h-[276px] max-md:w-full max-md:h-[124px] bg-gray-300 rounded animate-pulse"
+			></div>
 		{/if}
 	</div>
 
-	<div class="p-4 h-[150px] w-[300px] max-md:w-[140px] max-md:h-full max-md:p-2 max-md:pt-0 flex flex-col justify-between">
+	<div
+		class="p-4 h-[150px] w-[300px] max-md:w-[140px] max-md:h-full max-md:p-2 max-md:pt-0 flex flex-col justify-between"
+	>
 		<div
 			class={cn(
 				isMobile ? typography({ variant: 'body-small' }) : typography({ variant: 'body-medium' }),
@@ -62,7 +66,9 @@
 		<div class="flex justify-between mt-auto">
 			<div
 				class={cn(
-					isMobile ? typography({ variant: 'body-very-small' }) : typography({ variant: 'body-normal' }),
+					isMobile
+						? typography({ variant: 'body-very-small' })
+						: typography({ variant: 'body-normal' }),
 					'gap-[6px] h-auto',
 					isMobile ? 'leading-2' : 'leading-4'
 				)}
@@ -72,7 +78,9 @@
 
 			<div
 				class={cn(
-					isMobile ? typography({ variant: 'body-very-small' }) : typography({ variant: 'body-normal' }),
+					isMobile
+						? typography({ variant: 'body-very-small' })
+						: typography({ variant: 'body-normal' }),
 					'gap-[6px] h-auto',
 					isMobile ? 'leading-2' : 'leading-4'
 				)}

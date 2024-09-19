@@ -90,7 +90,7 @@
 	});
 
 	annoucementCard.push({
-		imageURL: "",
+		imageURL: '',
 		title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิตฯ',
 		createdAt: '2024-07-04',
 		createdBy: 'สภานิสิต',
