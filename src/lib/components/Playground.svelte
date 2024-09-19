@@ -64,10 +64,18 @@
 			: selectedTabs.filter((label) => label !== tab.label);
 	}
 
-	const annoucementCard = Array(6).fill({
+	const annoucementCard = Array(3).fill({
 		imageURL: thumbnail,
 		title:
 			'ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565',
+		createdAt: '2024-07-04',
+		createdBy: 'สภานิสิต',
+		linkHref: 'https://www.google.com'
+	});
+
+	annoucementCard.push({
+		imageURL: "",
+		title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิตฯ',
 		createdAt: '2024-07-04',
 		createdBy: 'สภานิสิต',
 		linkHref: 'https://www.google.com'
