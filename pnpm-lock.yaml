@@ -699,10 +699,13 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
+<<<<<<< HEAD
+=======
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
 
+>>>>>>> dev
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
@@ -2301,10 +2304,13 @@ snapshots:
 
   cssesc@3.0.0: {}
 
+<<<<<<< HEAD
+=======
   csso@5.0.5:
     dependencies:
       css-tree: 2.2.1
 
+>>>>>>> dev
   dayjs@1.11.13: {}
 
   debug@4.3.6:
