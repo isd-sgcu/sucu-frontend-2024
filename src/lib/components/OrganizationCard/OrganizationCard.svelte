@@ -1,30 +1,9 @@
 <script lang="ts">
 	import { typography } from '../../../styles/tailwind/typography';
 	import { cn } from '../../utils/cn';
-	import arrowRight from '../../assets/icons/arrow-right.svg';
-	import arrowCircleRight from '../../assets/icons/arrow-circle-right.svg';
-	import sapanisit from '../../assets/images/sapanisit.png';
-	import smo from '../../assets/images/smo.png';
-	import sgcu from '../../assets/images/sgcu.png';
-
-	const organizations = [
-		{
-			imageURL: smo,
-			orgName: 'สโมสรนิสิต \n จุฬาลงกรณ์มหาวิทยาลัย',
-			linkHref: 'https://www.google.com'
-		},
-		{
-			imageURL: sgcu,
-			orgName: 'องค์การบริหารสโมสรนิสิต จุฬาลงกรณ์มหาวิทยาลัย (อบจ.)',
-			linkHref: 'https://www.chula.ac.th/academics/academic-units/sgcu/'
-		},
-		{
-			imageURL: sapanisit,
-			orgName: 'สภานิสิต \n จุฬาลงกรณ์มหาวิทยาลัย',
-			linkHref:
-				'https://www.sa.chula.ac.th/%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%99%E0%B8%B4%E0%B8%AA%E0%B8%B4%E0%B8%95/'
-		}
-	];
+	import Fa from 'svelte-fa';
+	import { faArrowRight, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+	import { organizations } from '../../constant/organizations';
 </script>
 
 <div class="flex flex-nowrap w-full h-full items-center justify-center gap-[30px] max-md:hidden">
@@ -58,7 +37,7 @@
 					<div
 						class="h-[32px] w-[32px] absolute bottom-0 right-0 flex items-center justify-center transform transition-transform duration-300 group-hover:translate-x-1"
 					>
-						<img src={arrowRight} alt="arrowRight" width="24" height="auto" />
+						<Fa icon={faArrowRight} scale={1.5} />
 					</div>
 				</div>
 			</div>
@@ -90,8 +69,8 @@
 			>
 				{organization.orgName}
 			</div>
-			<div class="w-[35px] h-[35px] flex-shrink-0 ml-auto mt-auto">
-				<img src={arrowCircleRight} alt="arrowCircleRight" width="35" height="35" />
+			<div class="w-[35px] h-[35px] flex-shrink-0 mt-auto flex justify-end items-end pr-2 pb-2">
+				<Fa icon={faArrowCircleRight} color="#D5D5D5" scale={1.8} />
 			</div>
 		</a>
 	{/each}
