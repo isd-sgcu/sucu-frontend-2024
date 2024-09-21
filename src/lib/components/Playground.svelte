@@ -5,6 +5,19 @@
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import { modalShow } from './Modal/store';
 	import StatisticCard from './StatisticCard.svelte';
+	import DropdownItem from '$lib/components/Dropdown/DropdownItem.svelte';
+	import SearchBar from '$lib/components/SearchBar.svelte';
+	import DropdownList from '$lib/components/Dropdown/DropdownList.svelte';
+	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
+	import List from './List/List.svelte';
+	import TabsRoot from './Tabs/TabsRoot.svelte';
+	import TabsList from './Tabs/TabsList.svelte';
+	import TabsTrigger from './Tabs/TabsTrigger.svelte';
+	import TabsContent from './Tabs/TabsContent.svelte';
+	import Navbar from './Navbar.svelte';
+	import Footer from './Footer/Footer.svelte';
+	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
+	import thumbnail from '../assets/images/thumbnail.png';
 
 	modalShow.set(false);
 
@@ -55,10 +68,40 @@
 			? [...selectedTabs, tab.label]
 			: selectedTabs.filter((label) => label !== tab.label);
 	}
+
+	let searchValue = '';
+	let listValue: string | null = null;
+	let dropdownValue: string | null = null;
+	let choiceList: string[] = [
+		'ล่าสุด',
+		'ปี 2567',
+		'ปี 2566',
+		'ปี 2565',
+		'ปี 2564',
+		'ปีย้าวยาวววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววว'
+	];
+
+	const annoucementCard = Array(3).fill({
+		imageURL: thumbnail,
+		title:
+			'ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565',
+		createdAt: '2024-07-04',
+		createdBy: 'สภานิสิต',
+		linkHref: 'https://www.google.com'
+	});
+
+	annoucementCard.push({
+		imageURL: '',
+		title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิตฯ',
+		createdAt: '2024-07-04',
+		createdBy: 'สภานิสิต',
+		linkHref: 'https://www.google.com'
+	});
 </script>
 
 <div>
 	<!-- Typography Section -->
+	<Navbar />
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Typography Variants</h2>
 		{#each typographyVariants as variant}
@@ -151,7 +194,7 @@
 		{/if}
 	</section>
 
-	<section class="section w-fit">
+	<section class="section mb-5">
 		<h2 class="font-bold text-2xl mb-4">Modal</h2>
 		<Button variant="default" size="default" on:click={() => showModal()}>Click For Modal</Button>
 
@@ -159,6 +202,107 @@
 			<Modal />
 		{/if}
 	</section>
+
+	<section class="section">
+		<h2 class="font-bold text-2xl mb-4">Search & Dropdown</h2>
+
+		<div class="flex flex-col gap-4">
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl">SearchBar</h3>
+				<SearchBar bind:value={searchValue} />
+				<p>Search Value : {searchValue == '' ? 'no value' : searchValue}</p>
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl mb-2">DropdownItem</h3>
+
+				<div>
+					<DropdownItem text="Hello"></DropdownItem>
+					<DropdownItem text="Hello" disabled></DropdownItem>
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl mb-2">DropdownList</h3>
+
+				<DropdownList bind:currentChoice={listValue} items={choiceList} />
+				<p>List Value : {listValue || 'no value'}</p>
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<h3 class="font-semibold text-xl mb-2">Dropdown</h3>
+
+				<Dropdown items={choiceList} bind:currentChoice={dropdownValue} outerClass="w-64" />
+
+				<p>Dropdown Value : {dropdownValue || 'no value'}</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<TabsRoot defaultActiveTab="all">
+			<TabsList>
+				<TabsTrigger value="all">ทั้งหมด</TabsTrigger>
+				<TabsTrigger value="sgcu">อบจ.</TabsTrigger>
+				<TabsTrigger value="sccu">สภานิสิต</TabsTrigger>
+			</TabsList>
+
+			<TabsContent value="all">
+				<p>This is the all tab content.</p>
+			</TabsContent>
+			<TabsContent value="sgcu">
+				<p>This is the sgcu tab content.</p>
+			</TabsContent>
+			<TabsContent value="sccu">
+				<p>This is the sccu tab content.</p>
+			</TabsContent>
+		</TabsRoot>
+	</section>
+
+	<section class="section mb-5 gap-y-5 flex flex-col">
+		<h2 class="font-bold text-2xl mb-4">List</h2>
+
+		<List
+			variant="pink"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
+		<List
+			variant="grey"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
+		<List
+			variant="default"
+			title="Title Longgggggggggggggggggggggggggggggggggggggggggggggggggggg"
+			createdAt="2022-01-01"
+			createdBy="Admin"
+			linkHref="https://google.com"
+		/>
+	</section>
+
+	<!-- AnnoucementCard.svelte -->
+	<section class="section">
+		<h2 class="font-bold text-2xl mb-4">Announcement Card</h2>
+
+		<div class="flex gap-6 px-10 pb-10 pt-5 overflow-auto">
+			{#each annoucementCard as card}
+				<AnnoucementCard
+					imageURL={card.imageURL}
+					title={card.title}
+					createdAt={card.createdAt}
+					createdBy={card.createdBy}
+					linkHref={card.linkHref}
+				/>
+			{/each}
+		</div>
+	</section>
+
+	<Footer />
 
 	<section class="section w-fit">
 		<h2 class="font-bold text-2xl mb-4">StatisticCard</h2>
