@@ -4,7 +4,7 @@
 	import TabCapsuleItem from './TabCapsule.svelte';
 	import Modal from '$lib/components/Modal/Modal.svelte';
 	import { modalShow } from './Modal/store';
-	import StatisticCard from './StatisticCard.svelte';
+	import StatisticCard from './StatisticCard/StatisticCard.svelte';
 	import DropdownItem from '$lib/components/Dropdown/DropdownItem.svelte';
 	import SearchBar from '$lib/components/SearchBar.svelte';
 	import DropdownList from '$lib/components/Dropdown/DropdownList.svelte';
