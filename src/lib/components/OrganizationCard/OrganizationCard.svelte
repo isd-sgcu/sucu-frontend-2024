@@ -2,7 +2,7 @@
 	import { typography } from '../../../styles/tailwind/typography';
 	import { cn } from '../../utils/cn';
 	import Fa from 'svelte-fa';
-	import { faArrowRight, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+	import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 	import { organizations } from '../../constant/organizations';
 </script>
 
@@ -35,7 +35,7 @@
 						{organization.orgName}
 					</div>
 					<div
-						class="h-[32px] w-[32px] absolute bottom-0 right-0 flex items-center justify-center transform transition-transform duration-300 group-hover:translate-x-1"
+						class="h-8 w-8 absolute bottom-0 right-0 flex items-center justify-center transform transition-transform duration-300 group-hover:translate-x-1"
 					>
 						<Fa icon={faArrowRight} scale={1.5} />
 					</div>
@@ -69,8 +69,10 @@
 			>
 				{organization.orgName}
 			</div>
-			<div class="w-[35px] h-[35px] flex-shrink-0 mt-auto flex justify-end items-end pr-2 pb-2">
-				<Fa icon={faArrowCircleRight} color="#D5D5D5" scale={1.8} />
+			<div
+				class="w-8 h-8 flex flex-shrink-0 mt-auto justify-center items-center rounded-full border-2 border-sucu-gray-light"
+			>
+				<Fa icon={faArrowRight} class="text-xl text-sucu-gray-light" />
 			</div>
 		</a>
 	{/each}
