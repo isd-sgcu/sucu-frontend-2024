@@ -310,7 +310,6 @@
 		<StatisticCard></StatisticCard>
 		<StatisticCard></StatisticCard>
 	</section>
-	
 </div>
 
 <style>
