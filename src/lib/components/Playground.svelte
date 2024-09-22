@@ -17,6 +17,7 @@
 	import Footer from './Footer/Footer.svelte';
 	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
+	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
 
 	modalShow.set(false);
 
@@ -299,6 +300,12 @@
 				/>
 			{/each}
 		</div>
+	</section>
+
+	<!-- OrganizationCard.svelte -->
+	<section class="section">
+		<h2 class="font-bold text-2xl mb-4">Organization Card</h2>
+		<OrganizationCard />
 	</section>
 
 	<Footer />
