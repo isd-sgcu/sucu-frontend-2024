@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { faCalendar, faChalkboard, faPencil } from '@fortawesome/free-solid-svg-icons';
-	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	import thumbnail from '../../assets/images/thumbnail.png';
+	import { cn } from '$lib/utils';
+	import { typography } from '../../../styles/tailwind/typography';
+	import Fa from 'svelte-fa';
 
-	export let imageUrl = thumbnail;
+	export let imageUrl = '';
 	export let title = '';
 	export let createAt = '';
-	export let hrefUrl = '';
 	export let infoType = '';
-	export let organization = '';
+	export let createBy = '';
+	export let hrefUrl = '';
 </script>
 
 <div
@@ -19,24 +20,37 @@
 	</div>
 	<div class="px-2 md:px-7 py-2 flex flex-col justify-between w-full">
 		<div>
-			<p class="text-xl md:text-2xl font-semibold text-sucu-gray-dark mb-2">
+			<p
+				class={cn('font-semibold text-sucu-gray-dark mb-2', typography({ variant: 'body-large' }))}
+			>
 				{title}
 			</p>
-			<div class="flex items-center text-lg md:text-xl text-sucu-gray-dark mb-3 md:mb-5">
-				<FontAwesomeIcon icon={faCalendar} class="mr-3" />
-				<p>{createAt}</p>
+			<div class="flex items-center text-sucu-gray-dark mb-3 md:mb-5">
+				<Fa icon={faCalendar} class="mr-2" />
+				<p
+					class={cn(
+						'text-sucu-gray-dark',
+						typography({ variant: 'body-medium' })
+					)}
+				>
+					{createAt}
+				</p>
 			</div>
 		</div>
 
 		<div class="flex flex-row justify-between pt-3 md:py-0">
 			<div class="mb-4 md:mb-0">
 				<div class="flex items-center mb-2">
-					<FontAwesomeIcon icon={faChalkboard} class="mr-3" />
-					<p class="text-sucu-gray-dark">{infoType}</p>
+					<Fa icon={faChalkboard} class="mr-2" />
+					<p class={cn('text-sucu-gray-dark', typography({ variant: 'body-normal' }))}>
+						{infoType}
+					</p>
 				</div>
 				<div class="flex items-center">
-					<FontAwesomeIcon icon={faPencil} class="mr-3" />
-					<p class="text-sucu-gray-dark">{organization}</p>
+					<Fa icon={faPencil} class="mr-2" />
+					<p class={cn('text-sucu-gray-dark', typography({ variant: 'body-normal' }))}>
+						{createBy}
+					</p>
 				</div>
 			</div>
 			<a href={hrefUrl} class="text-black text-lg md:text-xl self-center"> อ่านต่อ » </a>

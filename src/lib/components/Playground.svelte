@@ -97,6 +97,15 @@
 		createdBy: 'สภานิสิต',
 		linkHref: 'https://www.google.com'
 	});
+
+	const statisticCardList = Array(3).fill({
+		imageUrl: thumbnail,
+		title: 'สถิติการเข้าประชุมของ ส.ส. ปีการศึกษา 2566',
+		createAt: '04 กรกฎาคม 2567',
+		infoType: 'สถิติ',
+		createBy: 'สภานิสิตฯ',
+		hrefUrl: '/'
+	});
 </script>
 
 <div>
@@ -306,9 +315,16 @@
 
 	<section class="section w-fit">
 		<h2 class="font-bold text-2xl mb-4">StatisticCard</h2>
-		<StatisticCard></StatisticCard>
-		<StatisticCard></StatisticCard>
-		<StatisticCard></StatisticCard>
+		{#each statisticCardList as item}
+			<StatisticCard
+				imageUrl={item.imageUrl}
+				title={item.title}
+				createAt={item.createAt}
+				createBy={item.createBy}
+				hrefUrl={item.hrefUrl}
+				infoType={item.infoType}
+			/>
+		{/each}
 	</section>
 </div>
 
