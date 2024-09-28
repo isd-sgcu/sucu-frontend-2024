@@ -13,8 +13,6 @@
 	import TabsList from './Tabs/TabsList.svelte';
 	import TabsTrigger from './Tabs/TabsTrigger.svelte';
 	import TabsContent from './Tabs/TabsContent.svelte';
-	import Navbar from './Navbar.svelte';
-	import Footer from './Footer/Footer.svelte';
 	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
 	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
@@ -101,7 +99,6 @@
 
 <div>
 	<!-- Typography Section -->
-	<Navbar />
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Typography Variants</h2>
 		{#each typographyVariants as variant}
@@ -307,8 +304,6 @@
 		<h2 class="font-bold text-2xl mb-4">Organization Card</h2>
 		<OrganizationCard />
 	</section>
-
-	<Footer />
 </div>
 
 <style>
