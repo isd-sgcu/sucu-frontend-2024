@@ -4,6 +4,6 @@ import { announcements } from '$lib/mock/annoucement';
 
 export const load: PageLoad = async () => {
 	return {
-        announcements
+		announcements
 	};
 };

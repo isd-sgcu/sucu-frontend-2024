@@ -137,8 +137,6 @@
 			currentPages[tab]--;
 		}
 	}
-
-
 </script>
 
 <div>
@@ -190,42 +188,42 @@
 				<TabsTrigger value="sccu">สภานิสิต</TabsTrigger>
 			</TabsList>
 
-		<Dropdown
-        items={['All', ...years]}
-			bind:currentChoice={dropdownValue}
-			outerClass="w-64 my-12"
-		/>
-
-		<TabsContent value="all" class="space-y-2">
-			<AnnounceList
-				currentPage={currentPages.all}
-				changePage={(variant, direction) => changePage(variant, direction)}
-				documents={paginatedAll}
-				totalPages={totalPages.all}
-				variantKey="all"
+			<Dropdown
+				items={['All', ...years]}
+				bind:currentChoice={dropdownValue}
+				outerClass="w-64 my-12"
 			/>
-		</TabsContent>
 
-		<TabsContent value="sgcu" class="space-y-2">
-                <AnnounceList
-                    currentPage={currentPages.sgcu}
-                    changePage={(variant, direction) => changePage(variant, direction)}
-                    documents={paginatedSGCU}
-                    totalPages={totalPages.sgcu}
-                    variantKey="sgcu"
-                />
-            </TabsContent>
-    
-            <TabsContent value="sccu" class="space-y-2">
-                <AnnounceList
-                    currentPage={currentPages.sccu}
-                    changePage={(variant, direction) => changePage(variant, direction)}
-                    documents={paginatedSCCU}
-                    totalPages={totalPages.sccu}
-                    variantKey="sccu"
-                />
-            </TabsContent>
-        </TabsRoot>
+			<TabsContent value="all" class="space-y-2">
+				<AnnounceList
+					currentPage={currentPages.all}
+					changePage={(variant, direction) => changePage(variant, direction)}
+					documents={paginatedAll}
+					totalPages={totalPages.all}
+					variantKey="all"
+				/>
+			</TabsContent>
+
+			<TabsContent value="sgcu" class="space-y-2">
+				<AnnounceList
+					currentPage={currentPages.sgcu}
+					changePage={(variant, direction) => changePage(variant, direction)}
+					documents={paginatedSGCU}
+					totalPages={totalPages.sgcu}
+					variantKey="sgcu"
+				/>
+			</TabsContent>
+
+			<TabsContent value="sccu" class="space-y-2">
+				<AnnounceList
+					currentPage={currentPages.sccu}
+					changePage={(variant, direction) => changePage(variant, direction)}
+					documents={paginatedSCCU}
+					totalPages={totalPages.sccu}
+					variantKey="sccu"
+				/>
+			</TabsContent>
+		</TabsRoot>
 	</MaxWidthWrapper>
 
 	<Footer />
