@@ -169,7 +169,7 @@
 	<MaxWidthWrapper class="my-10 space-y-12">
 		<div class="flex flex-col gap-3 items-start">
 			<div class="flex items-center gap-4">
-				<button on:click={() => history.back()} class="lg:relative -left-96 scale-150">
+				<button on:click={() => history.back()} class="lg:relative -left-52 scale-150">
 					<Fa icon={faCircleArrowLeft} size="lg" />
 				</button>
 				<h1 class={cn(typography({ variant: 'heading3' }), 'md:text-5xl lg:order-first')}>
