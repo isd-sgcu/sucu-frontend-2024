@@ -2,29 +2,26 @@
 	import { cn } from '../../utils/cn';
 	import Fa from 'svelte-fa';
 	import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-    import Dropdown from '../Dropdown/Dropdown.svelte';
+	import Dropdown from '../Dropdown/Dropdown.svelte';
 
-	export let Arrayitem: any[] = []; // Explicitly define the type as any[]
-	let currentPage: number = 1;
+	export let Arrayitem: string[] = []; // Explicitly define the type as any[]
+	let currentPage: number | string = 1;
 	let itemsPerPage: string = '5'; // Default items per page
 	let totalPages: number = Math.ceil(Arrayitem.length / parseInt(itemsPerPage));
-	let paginatedItems: any[] = [];
+	let paginatedItems: string[] = [];
 
-    const pageChoice: string[] = [
-		'5','10','15'
-	];
+	const pageChoice: string[] = ['5', '10', '15'];
 
-	function changePage(page: any) {
+	function changePage(page: number | string) {
 		currentPage = page;
 		paginateItems();
 	}
 
-
-    function paginateItems() {
-        const startIndex = (currentPage - 1) * parseInt(itemsPerPage);
-        const endIndex = startIndex + parseInt(itemsPerPage);
-        paginatedItems = Arrayitem.slice(startIndex, endIndex);
-    }
+	function paginateItems() {
+		const startIndex = (Number(currentPage) - 1) * parseInt(itemsPerPage);
+		const endIndex = startIndex + parseInt(itemsPerPage);
+		paginatedItems = Arrayitem.slice(startIndex, endIndex);
+	}
 
 	function getVisiblePages(totalPages: number, currentPage: number) {
 		let pages = [];
@@ -57,58 +54,57 @@
 		itemsPerPage = '5';
 	}
 
-       
-    $: paginateItems();
+	$: paginateItems();
 </script>
 
 <div class="flex flex-col gap-2 justify-center items-center">
 	<div class="flex gap-2 max-md:flex-col max-md:gap-1">
-        <div class="flex gap-2  max-md:gap-1">
-		<button
-			class="px-4 py-2 rounded bg-white border max-md:scale-75"
-			on:click={() => changePage(currentPage - 1)}
-			disabled={currentPage === 1}
-		>
-			<Fa icon={faChevronLeft} scale={0.75} />
-		</button>
+		<div class="flex gap-2 max-md:gap-1">
+			<button
+				class="px-4 py-2 rounded bg-white border max-md:scale-75"
+				on:click={() => changePage(Number(currentPage) - 1)}
+				disabled={currentPage === 1}
+			>
+				<Fa icon={faChevronLeft} scale={0.75} />
+			</button>
 
-        <div class="gap-2 flex flex-wrap">
-		{#each getVisiblePages(totalPages, currentPage) as page}
-			{#if page === '...'}
-				<span class="px-4 py-2 max-md:scale-75">...</span>
-			{:else}
-				<button
-					class={cn(
-						'  px-4 max-md:px-4 py-2 rounded max-md:scale-75',
-						currentPage === page ? 'text-white bg-sucu-pink-02 ' : 'text-black bg-white border'
-					)}
-					on:click={() => changePage(page)}
-				>
-					{page}
-				</button>
-			{/if}
-		{/each}
-    </div>
+			<div class="gap-2 flex flex-wrap">
+				{#each getVisiblePages(totalPages, Number(currentPage)) as page}
+					{#if page === '...'}
+						<span class="px-4 py-2 max-md:scale-75">...</span>
+					{:else}
+						<button
+							class={cn(
+								'  px-4 max-md:px-4 py-2 rounded max-md:scale-75',
+								currentPage === page ? 'text-white bg-sucu-pink-02 ' : 'text-black bg-white border'
+							)}
+							on:click={() => changePage(page)}
+						>
+							{page}
+						</button>
+					{/if}
+				{/each}
+			</div>
 
-		<button
-			class="px-4 py-2 rounded bg-white border max-md:scale-75"
-			on:click={() => changePage(currentPage + 1)}
-			disabled={currentPage === totalPages}
-		>
-			<Fa icon={faChevronRight} scale={0.75} />
-		</button>
-    </div>
-        <div class="flex gap-2  max-md:gap-1">
-        <div class="flex items-center max-md:scale-75">
-        <Dropdown 
-            items={pageChoice} 
-            bind:currentChoice={itemsPerPage} 
-            outerClass="w-20 bg-opacity-50 " 
-            on:change={(e) => itemsPerPage = e.detail}
-        />
-    </div>
-        <div class="flex items-center">/ page</div>
-    </div>
+			<button
+				class="px-4 py-2 rounded bg-white border max-md:scale-75"
+				on:click={() => changePage(Number(currentPage) + 1)}
+				disabled={Number(currentPage) === totalPages}
+			>
+				<Fa icon={faChevronRight} scale={0.75} />
+			</button>
+		</div>
+		<div class="flex gap-2 max-md:gap-1">
+			<div class="flex items-center max-md:scale-75">
+				<Dropdown
+					items={pageChoice}
+					bind:currentChoice={itemsPerPage}
+					outerClass="w-20 bg-opacity-50 "
+					on:change={(e) => (itemsPerPage = e.detail)}
+				/>
+			</div>
+			<div class="flex items-center">/ page</div>
+		</div>
 	</div>
 </div>
 
@@ -119,5 +115,3 @@
 		</div>
 	{/each}
 </div>
-
-
