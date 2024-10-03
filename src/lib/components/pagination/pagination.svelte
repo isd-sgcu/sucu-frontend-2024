@@ -61,23 +61,25 @@
     $: paginateItems();
 </script>
 
-<div class="flex flex-col gap-2">
-	<div class="flex gap-2">
+<div class="flex flex-col gap-2 justify-center items-center">
+	<div class="flex gap-2 max-md:flex-col max-md:gap-1">
+        <div class="flex gap-2  max-md:gap-1">
 		<button
-			class="px-4 py-2 rounded bg-white border"
+			class="px-4 py-2 rounded bg-white border max-md:scale-75"
 			on:click={() => changePage(currentPage - 1)}
 			disabled={currentPage === 1}
 		>
 			<Fa icon={faChevronLeft} scale={0.75} />
 		</button>
 
+        <div class="gap-2 flex flex-wrap">
 		{#each getVisiblePages(totalPages, currentPage) as page}
 			{#if page === '...'}
-				<span class="px-4 py-2">...</span>
+				<span class="px-4 py-2 max-md:scale-75">...</span>
 			{:else}
 				<button
 					class={cn(
-						'  px-4 py-2 rounded',
+						'  px-4 max-md:px-4 py-2 rounded max-md:scale-75',
 						currentPage === page ? 'text-white bg-sucu-pink-02 ' : 'text-black bg-white border'
 					)}
 					on:click={() => changePage(page)}
@@ -86,21 +88,27 @@
 				</button>
 			{/if}
 		{/each}
+    </div>
 
 		<button
-			class="px-4 py-2 rounded bg-white border"
+			class="px-4 py-2 rounded bg-white border max-md:scale-75"
 			on:click={() => changePage(currentPage + 1)}
 			disabled={currentPage === totalPages}
 		>
 			<Fa icon={faChevronRight} scale={0.75} />
 		</button>
+    </div>
+        <div class="flex gap-2  max-md:gap-1">
+        <div class="flex items-center max-md:scale-75">
         <Dropdown 
             items={pageChoice} 
             bind:currentChoice={itemsPerPage} 
             outerClass="w-20 bg-opacity-50 " 
             on:change={(e) => itemsPerPage = e.detail}
         />
-        <div class="flex items-center"> / page</div>
+    </div>
+        <div class="flex items-center">/ page</div>
+    </div>
 	</div>
 </div>
 
