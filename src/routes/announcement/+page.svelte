@@ -27,7 +27,7 @@
 	export let data;
 	const { announcements } = data;
 
-	const image = [pic1, pic2, pic3, pic4];
+	export let image = [pic1, pic2, pic3, pic4];
 	let searchValue = '';
 	let dropdownValue = 'All';
 	let currentIndex = 0;
