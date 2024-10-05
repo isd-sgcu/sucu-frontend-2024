@@ -4,13 +4,14 @@
 	import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 	import Dropdown from '../Dropdown/Dropdown.svelte';
 
-	export let Arrayitem: string[] = []; // Explicitly define the type as any[]
+	export let Arrayitem: string[] = []; 
+	export let pageChoice: string[] = ['5', '10', '15'];
+	export let itemsPerPage: string = '5'; 
+
 	let currentPage: number | string = 1;
-	let itemsPerPage: string = '5'; // Default items per page
 	let totalPages: number = Math.ceil(Arrayitem.length / parseInt(itemsPerPage));
 	let paginatedItems: string[] = [];
 
-	const pageChoice: string[] = ['5', '10', '15'];
 
 	function changePage(page: number | string) {
 		currentPage = page;

@@ -18,7 +18,7 @@
 	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
 	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
-	import Pagination from './pagination/pagination.svelte';
+	import Pagination from './Pagination/Pagination.svelte';
 
 	modalShow.set(false);
 
