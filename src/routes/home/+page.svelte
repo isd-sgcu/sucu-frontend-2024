@@ -131,9 +131,9 @@
             </Button>
         </div>
     </div>
-    <!-- <div class="w-full h-[288px] bg-cover bg-center max-md:hidden" style="background-image: url({sucuHomeBanner2});"></div>
-    <div class="w-full h-[184px] bg-cover bg-center md:hidden" style="background-image: url({sucuHomeBanner3});"></div> -->
-    <div class="flex flex-col w-full h-[694px] max-md:h-[576px] md:h-[576px] max-2xl:h-[620px] max-xl:h-[500px] max-lg:h-[370px] py-[72px] max-md:py-px gap-[72px] max-md:gap-[38px] bg-cover bg-center items-center justify-center text-sucu-gray-dark" style="background-image: url({sucuHomeBanner4}); background-size: contain;">
+    <img src={sucuHomeBanner2} alt="banner" class="w-full h-auto bg-cover max-md:hidden" />
+    <img src={sucuHomeBanner3} alt="banner" class="w-full h-auto bg-cover md:hidden" />
+    <!-- <div class="flex flex-col w-full h-[694px] max-md:h-[576px] md:h-[576px] max-2xl:h-[620px] max-xl:h-[500px] max-lg:h-[370px] py-[72px] max-md:py-px gap-[72px] max-md:gap-[38px] bg-cover bg-center items-center justify-center text-sucu-gray-dark" style="background-image: url({sucuHomeBanner4}); background-size: contain;">
         <div class={cn(
             typography({ variant: 'heading1' }),
             "tracking-tight leading-none",
@@ -141,7 +141,7 @@
             3 องค์กรหลักในจุฬาฯ
         </div>
         <OrganizationCard />
-    </div>
+    </div> -->
     <div class="h-[200px] bg-slate-100"></div>
     <Footer />
 </div>
