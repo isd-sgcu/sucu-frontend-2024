@@ -18,6 +18,8 @@
 	import Footer from './Footer/Footer.svelte';
 	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
+	import Pagination from './Pagination/Pagination.svelte';
+	import PaginationBox from './Pagination/PaginationBox.svelte';
 
 	modalShow.set(false);
 
@@ -325,6 +327,11 @@
 				infoType={item.infoType}
 			/>
 		{/each}
+	</section>
+
+	<section class="section w-fit">
+		<h2 class="font-bold text-2xl mb-4">Pagination</h2>
+			<PaginationBox/>
 	</section>
 </div>
 
