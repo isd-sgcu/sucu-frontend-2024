@@ -63,6 +63,7 @@
             </Button>
         </div>
     </div>
+    
     <div class="flex w-full h-[642px] py-[72px] px-[120px] gap-12 items-center text-sucu-gray-dark bg-white max-md:hidden">
         <div class="flex flex-col w-[297px] h-[208px] min-w-[297px] min-h-[208px] justify-between text-end">
             <div class={cn(
@@ -131,17 +132,30 @@
             </Button>
         </div>
     </div>
+
     <img src={sucuHomeBanner2} alt="banner" class="w-full h-auto bg-cover max-md:hidden" />
     <img src={sucuHomeBanner3} alt="banner" class="w-full h-auto bg-cover md:hidden" />
-    <!-- <div class="flex flex-col w-full h-[694px] max-md:h-[576px] md:h-[576px] max-2xl:h-[620px] max-xl:h-[500px] max-lg:h-[370px] py-[72px] max-md:py-px gap-[72px] max-md:gap-[38px] bg-cover bg-center items-center justify-center text-sucu-gray-dark" style="background-image: url({sucuHomeBanner4}); background-size: contain;">
-        <div class={cn(
-            typography({ variant: 'heading1' }),
-            "tracking-tight leading-none",
-            "max-md:font-bold max-md:text-3xl")}>
-            3 องค์กรหลักในจุฬาฯ
+
+    <div class="flex flex-col w-full h-auto items-center justify-center text-sucu-gray-dark relative">
+
+        <div class="w-full h-[180px] bg-[#FFF7F6] max-md:h-[98px] 2xl:h-[160px] max-2xl:h-[130px] max-lg:h-[100px]"></div>        <div class="w-full h-[105px] max-md:h-[98px] max-2xl:h-[90px] max-lg:h-[65px] bg-sucu-pink-05"></div>
+        <div class="w-full h-[105px] max-md:h-[98px] max-2xl:h-[90px] max-lg:h-[65px] bg-sucu-pink-04"></div>
+        <div class="w-full h-[105px] max-md:h-[98px] max-2xl:h-[90px] max-lg:h-[65px] bg-sucu-pink-03"></div>
+        <div class="w-full h-[105px] max-md:h-[98px] max-2xl:h-[90px] max-lg:h-[65px] bg-sucu-pink-02"></div>
+        <div class="w-full h-[105px] max-md:h-[98px] max-2xl:h-[90px] max-lg:h-[65px] bg-sucu-pink-01"></div>
+
+        <div class="absolute z-10 flex flex-col justify-between h-full w-full py-[72px] 2xl:py-20 xl:py-14 lg:py-[72px] md:py-12">
+            <div class={cn(
+                typography({ variant: 'heading1' }),
+                "tracking-tight leading-none font-bold text-center",
+                "max-md:text-3xl max-md:mb-7")}>
+                3 องค์กรหลักในจุฬาฯ
+            </div>
+            <div class="mt-auto">
+                <OrganizationCard />
+            </div>
         </div>
-        <OrganizationCard />
-    </div> -->
-    <div class="h-[200px] bg-slate-100"></div>
+    </div>
+    
     <Footer />
 </div>
