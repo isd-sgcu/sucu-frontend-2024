@@ -2,6 +2,7 @@
 import { colorScheme } from './src/styles/tailwind/color';
 import { boxShadow } from './src/styles/tailwind/shadow';
 import { borderRadius } from './src/styles/tailwind/borderRadius';
+import tailwindScrollbar from 'tailwind-scrollbar';
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
@@ -11,7 +12,5 @@ export default {
 			borderRadius: borderRadius
 		}
 	},
-	plugins: [
-		require('tailwind-scrollbar'),
-	],
+	plugins: [tailwindScrollbar]
 };

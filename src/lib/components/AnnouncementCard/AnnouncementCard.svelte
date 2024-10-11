@@ -13,7 +13,7 @@
 	export let createdAt: string;
 	export let createdBy: string;
 	export let linkHref: string;
-	export let className = "";
+	export let className = '';
 
 	function formatDate(dateString: string): string {
 		return dayjs(dateString).locale('th').format('DD MMMM BBBB');

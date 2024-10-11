@@ -13,8 +13,6 @@
 	import TabsList from './Tabs/TabsList.svelte';
 	import TabsTrigger from './Tabs/TabsTrigger.svelte';
 	import TabsContent from './Tabs/TabsContent.svelte';
-	import Navbar from './Navbar.svelte';
-	import Footer from './Footer/Footer.svelte';
 	import AnnouncementCard from './AnnouncementCard/AnnouncementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
 	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
