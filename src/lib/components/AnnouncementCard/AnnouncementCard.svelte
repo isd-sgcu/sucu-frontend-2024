@@ -13,6 +13,7 @@
 	export let createdAt: string;
 	export let createdBy: string;
 	export let linkHref: string;
+	export let className = "";
 
 	function formatDate(dateString: string): string {
 		return dayjs(dateString).locale('th').format('DD MMMM BBBB');
@@ -38,7 +39,7 @@
 <a
 	href={linkHref}
 	target="_blank"
-	class="h-[450px] w-[300px] max-md:w-[140px] max-md:h-[222px] bg-white text-sucu-gray-dark rounded shadow-card-shadow hover:shadow-card-shadow-hover transition-shadow flex flex-col items-center"
+	class="${className} h-[450px] w-[300px] max-md:w-[140px] max-md:h-[222px] bg-white text-sucu-gray-dark rounded shadow-card hover:shadow-card-shadow-hover transition-shadow flex flex-col items-center"
 >
 	<div class="p-3 h-[300px] w-[300px] max-md:w-full max-md:h-auto max-md:p-2">
 		{#if imageURL || imageURL.length > 0}
@@ -90,3 +91,16 @@
 		</div>
 	</div>
 </a>
+
+<style>
+	@media (min-width: 768px) {
+		.shadow-card {
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+		}
+	}
+	@media (max-width: 767px) {
+		.shadow-card {
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		}
+	}
+</style>

@@ -6,13 +6,13 @@
     import sucuHomeBanner1 from '../../lib/assets/images/sucuHomeBanner1.png';
     import sucuHomeBanner2 from '../../lib/assets/images/sucuHomeBanner2.png';
     import sucuHomeBanner3 from '../../lib/assets/images/sucuHomeBanner3.png';
-    import sucuHomeBanner4 from '../../lib/assets/images/sucuHomeBanner4.png';
     import Footer from '$lib/components/Footer/Footer.svelte';
-    import AnnoucementCard from '$lib/components/AnnoucementCard/AnnoucementCard.svelte';
+    import AnnouncementCard from '$lib/components/AnnouncementCard/AnnouncementCard.svelte';
     import OrganizationCard from '$lib/components/OrganizationCard/OrganizationCard.svelte';
     import thumbnail from '../../lib/assets/images/thumbnail.png';
+    import { onMount } from 'svelte';
 
-    const annoucementCard = Array(4).fill({
+    const announcementCard = Array(6).fill({
 		imageURL: thumbnail,
 		title:
 			'ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565',
@@ -21,13 +21,31 @@
 		linkHref: 'https://www.google.com'
 	});
 
-	annoucementCard.push({
+	announcementCard.push({
 		imageURL: '',
 		title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิตฯ',
 		createdAt: '2024-07-04',
 		createdBy: 'สภานิสิต',
 		linkHref: 'https://www.google.com'
 	});
+
+    let container: HTMLDivElement;
+    let activeSlide = 0;
+
+    function handleScroll() {
+        const scrollLeft = container.scrollLeft;
+        const cardWidth = 140;
+        const cardCount = announcementCard.length;
+        const cardGap = 2.5;
+        const threshold = (cardWidth + cardGap) / 3;
+        const currentCardIndex = Math.floor((scrollLeft + threshold) / (cardWidth + cardGap));
+
+        activeSlide = Math.min(currentCardIndex, cardCount - 1);
+    }
+
+    onMount(() => {
+        container.addEventListener('scroll', handleScroll);
+    });
 </script>
 
 
@@ -63,7 +81,7 @@
             </Button>
         </div>
     </div>
-    
+
     <div class="flex w-full h-[642px] py-[72px] px-[120px] gap-12 items-center text-sucu-gray-dark bg-white max-md:hidden">
         <div class="flex flex-col w-[297px] h-[208px] min-w-[297px] min-h-[208px] justify-between text-end">
             <div class={cn(
@@ -86,8 +104,8 @@
             </div>
         </div>
         <div class="flex overflow-auto p-6 gap-6 scrollbar-thin scrollbar-thumb-sucu-gray-light scrollbar-track-white">
-            {#each annoucementCard as card}
-				<AnnoucementCard
+            {#each announcementCard as card}
+				<AnnouncementCard
 					imageURL={card.imageURL}
 					title={card.title}
 					createdAt={card.createdAt}
@@ -110,19 +128,21 @@
                 ประกาศล่าสุดของสโมสรนิสิตจุฬาฯ อบจ. และสภานิสิตจุฬาฯ
             </div>
         </div>
-        <div class="flex h-[257px] px-2.5 gap-2.5 overflow-auto items-center">
-            {#each annoucementCard as card}
-				<AnnoucementCard
-					imageURL={card.imageURL}
-					title={card.title}
-					createdAt={card.createdAt}
-					createdBy={card.createdBy}
-					linkHref={card.linkHref}
-				/>
-			{/each}
+        <div bind:this={container} class="flex h-[257px] px-2.5 gap-2.5 overflow-x-auto items-center scrollbar-none snap-x snap-proximity">
+            {#each announcementCard as card}
+                <AnnouncementCard
+                    imageURL={card.imageURL}
+                    title={card.title}
+                    createdAt={card.createdAt}
+                    createdBy={card.createdBy}
+                    linkHref={card.linkHref}
+                    className="snap-start" />
+            {/each}
         </div>
-        <div class="flex justify-center items-center text-center h-[5px] w-[69px]">
-            <div class="h-[5px] w-[69px] bg-slate-300"></div>
+        <div class="flex justify-center gap-2">
+            {#each announcementCard as _, index}
+                <div class={`w-[5px] h-[5px] rounded-full ${index === activeSlide ? 'bg-sucu-gray-dark' : 'bg-sucu-gray'}`}></div>
+            {/each}
         </div>
         <div class="flex justify-center">
             <Button size="sm" class={cn(
@@ -144,11 +164,11 @@
         <div class="w-full h-[105px] max-md:h-[98px] max-2xl:h-[90px] max-lg:h-[65px] bg-sucu-pink-02"></div>
         <div class="w-full h-[105px] max-md:h-[98px] max-2xl:h-[90px] max-lg:h-[65px] bg-sucu-pink-01"></div>
 
-        <div class="absolute z-10 flex flex-col justify-between h-full w-full py-[72px] 2xl:py-20 xl:py-14 lg:py-[72px] md:py-12">
+        <div class="absolute z-10 flex flex-col justify-between h-full w-full gap-[32px] py-[72px] 2xl:py-20 xl:py-14 lg:py-[72px] md:py-12">
             <div class={cn(
                 typography({ variant: 'heading1' }),
                 "tracking-tight leading-none font-bold text-center",
-                "max-md:text-3xl max-md:mb-7")}>
+                "max-md:text-3xl")}>
                 3 องค์กรหลักในจุฬาฯ
             </div>
             <div class="mt-auto">

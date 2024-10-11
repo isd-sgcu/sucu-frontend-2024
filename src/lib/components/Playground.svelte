@@ -15,7 +15,7 @@
 	import TabsContent from './Tabs/TabsContent.svelte';
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer/Footer.svelte';
-	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
+	import AnnouncementCard from './AnnouncementCard/AnnouncementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
 	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
 
@@ -81,7 +81,7 @@
 		'ปีย้าวยาวววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววว'
 	];
 
-	const annoucementCard = Array(3).fill({
+	const announcementCard = Array(3).fill({
 		imageURL: thumbnail,
 		title:
 			'ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565',
@@ -90,7 +90,7 @@
 		linkHref: 'https://www.google.com'
 	});
 
-	annoucementCard.push({
+	announcementCard.push({
 		imageURL: '',
 		title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิตฯ',
 		createdAt: '2024-07-04',
@@ -290,8 +290,8 @@
 		<h2 class="font-bold text-2xl mb-4">Announcement Card</h2>
 
 		<div class="flex gap-6 px-10 pb-10 pt-5 overflow-auto">
-			{#each annoucementCard as card}
-				<AnnoucementCard
+			{#each announcementCard as card}
+				<AnnouncementCard
 					imageURL={card.imageURL}
 					title={card.title}
 					createdAt={card.createdAt}
