@@ -113,10 +113,10 @@
 
 <MaxWidthWrapper class="mt-10 space-y-12">
 	<div class="flex flex-col gap-3 items-start">
+		<button on:click={() => history.back()} class="lg:relative -left-14 top-12">
+			<Fa icon={faCircleArrowLeft} size="lg" />
+		</button>
 		<div class="flex items-center gap-4">
-			<button on:click={() => history.back()} class="lg:relative -left-60 top-2">
-				<Fa icon={faCircleArrowLeft} size="lg" />
-			</button>
 			<h1 class={cn(typography({ variant: 'heading3' }), 'md:text-5xl lg:order-first')}>เอกสาร</h1>
 		</div>
 		<p class="text-sucu-gray lg:w-full">

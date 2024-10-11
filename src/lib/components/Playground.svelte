@@ -101,7 +101,6 @@
 
 <div>
 	<!-- Typography Section -->
-	<Navbar />
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Typography Variants</h2>
 		{#each typographyVariants as variant}
@@ -307,8 +306,6 @@
 		<h2 class="font-bold text-2xl mb-4">Organization Card</h2>
 		<OrganizationCard />
 	</section>
-
-	<Footer />
 </div>
 
 <style>
