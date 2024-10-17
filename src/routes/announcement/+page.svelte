@@ -58,7 +58,7 @@
 				left: imageWidth * currentIndex,
 				behavior: 'smooth'
 			});
-		} 
+		}
 	}
 
 	let paginatedAll: CustomDocument[] = [];
