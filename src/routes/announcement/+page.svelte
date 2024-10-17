@@ -23,10 +23,42 @@
 	import AnnounceList from './AnnounceList.svelte';
 	import { Role } from '$lib/types/role';
 	import type { Document as CustomDocument } from '$lib/types/document';
-
+	import Pagination from '$lib/components/Pagination/Pagination.svelte';
+	
 	export let data;
 	const { announcements } = data;
-
+	let PaginationMockitem: string[] = [
+		'1',
+		'2',
+		'3',
+		'4',
+		'5',
+		'6',
+		'7',
+		'8',
+		'9',
+		'10',
+		'11',
+		'12',
+		'13',
+		'14',
+		'15',
+		'16',
+		'17',
+		'18',
+		'19',
+		'20',
+		'21',
+		'22',
+		'23',
+		'24',
+		'25',
+		'26',
+		'27',
+		'28',
+		'29',
+		'30'
+	];
 	export let image = [pic1, pic2, pic3, pic4];
 	let searchValue = '';
 	let dropdownValue = 'All';
@@ -220,4 +252,6 @@
 			</TabsContent>
 		</TabsRoot>
 	</MaxWidthWrapper>
+
+	<Pagination Arrayitem={PaginationMockitem} />
 </div>
