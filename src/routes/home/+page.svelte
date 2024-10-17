@@ -7,25 +7,8 @@
 	import sucuHomeBanner3 from '../../lib/assets/images/sucuHomeBanner3.png';
 	import AnnouncementCard from '$lib/components/AnnouncementCard/AnnouncementCard.svelte';
 	import OrganizationCard from '$lib/components/OrganizationCard/OrganizationCard.svelte';
-	import thumbnail from '../../lib/assets/images/thumbnail.png';
+	import { mockAnnouncementCard } from '$lib/mock/annoucementCardData';
 	import { onMount } from 'svelte';
-
-	const announcementCard = Array(6).fill({
-		imageURL: thumbnail,
-		title:
-			'ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565',
-		createdAt: '2024-07-04',
-		createdBy: 'สภานิสิต',
-		linkHref: 'https://www.google.com'
-	});
-
-	announcementCard.push({
-		imageURL: '',
-		title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิตฯ',
-		createdAt: '2024-07-04',
-		createdBy: 'สภานิสิต',
-		linkHref: 'https://www.google.com'
-	});
 
 	let container: HTMLDivElement;
 	let activeSlide = 0;
@@ -33,7 +16,7 @@
 	function handleScroll() {
 		const scrollLeft = container.scrollLeft;
 		const cardWidth = 140;
-		const cardCount = announcementCard.length;
+		const cardCount = mockAnnouncementCard.length;
 		const cardGap = 2.5;
 		const threshold = (cardWidth + cardGap) / 3;
 		const currentCardIndex = Math.floor((scrollLeft + threshold) / (cardWidth + cardGap));
@@ -127,7 +110,7 @@
 		<div
 			class="flex overflow-auto p-6 gap-6 scrollbar-thin scrollbar-thumb-sucu-gray-light scrollbar-track-white"
 		>
-			{#each announcementCard as card}
+			{#each mockAnnouncementCard as card}
 				<AnnouncementCard
 					imageURL={card.imageURL}
 					title={card.title}
@@ -151,7 +134,7 @@
 			bind:this={container}
 			class="flex h-[257px] px-2.5 gap-2.5 overflow-x-auto items-center scrollbar-none snap-x snap-proximity"
 		>
-			{#each announcementCard as card}
+			{#each mockAnnouncementCard as card}
 				<AnnouncementCard
 					imageURL={card.imageURL}
 					title={card.title}
@@ -163,7 +146,7 @@
 			{/each}
 		</div>
 		<div class="flex justify-center gap-2">
-			{#each announcementCard as _, index}
+			{#each mockAnnouncementCard as _, index}
 				<div
 					class={`w-[5px] h-[5px] rounded-full ${index === activeSlide ? 'bg-sucu-gray-dark' : 'bg-sucu-gray'}`}
 				></div>
