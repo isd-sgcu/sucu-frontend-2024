@@ -13,11 +13,11 @@
 	import TabsList from './Tabs/TabsList.svelte';
 	import TabsTrigger from './Tabs/TabsTrigger.svelte';
 	import TabsContent from './Tabs/TabsContent.svelte';
-	import Navbar from './Navbar.svelte';
-	import Footer from './Footer/Footer.svelte';
 	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
 	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
+	import Pagination from './Pagination/Pagination.svelte';
+	import Footer from './Footer/Footer.svelte';
 
 	modalShow.set(false);
 
@@ -80,6 +80,38 @@
 		'ปี 2564',
 		'ปีย้าวยาวววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววว'
 	];
+	let PaginationMockitem: string[] = [
+		'1',
+		'2',
+		'3',
+		'4',
+		'5',
+		'6',
+		'7',
+		'8',
+		'9',
+		'10',
+		'11',
+		'12',
+		'13',
+		'14',
+		'15',
+		'16',
+		'17',
+		'18',
+		'19',
+		'20',
+		'21',
+		'22',
+		'23',
+		'24',
+		'25',
+		'26',
+		'27',
+		'28',
+		'29',
+		'30'
+	];
 
 	const annoucementCard = Array(3).fill({
 		imageURL: thumbnail,
@@ -101,7 +133,6 @@
 
 <div>
 	<!-- Typography Section -->
-	<Navbar />
 	<section class="section">
 		<h2 class="font-bold text-2xl mb-4">Typography Variants</h2>
 		{#each typographyVariants as variant}
@@ -308,6 +339,10 @@
 		<OrganizationCard />
 	</section>
 
+	<section class="section">
+		<h2 class="font-bold text-2xl mb-4">Pagination</h2>
+		<Pagination Arrayitem={PaginationMockitem} />
+	</section>
 	<Footer />
 </div>
 

@@ -10,7 +10,7 @@
 
 	const navItems = [
 		{ name: 'ประกาศ', href: '/' },
-		{ name: 'เอกสาร', href: '/' },
+		{ name: 'เอกสาร', href: '/document' },
 		{ name: 'งบประมาณและสถิติ', href: '/' },
 		{ name: 'สโมสรนิสิตฯ', href: '/' }
 	];

@@ -21,7 +21,6 @@
 
 <a
 	href={linkHref}
-	target="_blank"
 	class={cn(
 		'h-auto w-full flex flex-col py-3 px-4',
 		listVariants({ variant }),

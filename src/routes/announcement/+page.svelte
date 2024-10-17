@@ -136,7 +136,6 @@
 </script>
 
 <div>
-	<Navbar />
 
 	<div class="relative flex w-full h-[500px]">
 		<button
@@ -221,6 +220,4 @@
 			</TabsContent>
 		</TabsRoot>
 	</MaxWidthWrapper>
-
-	<Footer />
 </div>
