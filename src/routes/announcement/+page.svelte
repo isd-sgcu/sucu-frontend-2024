@@ -12,8 +12,6 @@
 	import TabsTrigger from '$lib/components/Tabs/TabsTrigger.svelte';
 	import TabsContent from '$lib/components/Tabs/TabsContent.svelte';
 	import MaxWidthWrapper from '$lib/components/MaxWidthWrapper.svelte';
-	import Navbar from '../../lib/components/Navbar.svelte';
-	import Footer from '../../lib/components/Footer/Footer.svelte';
 	import pic1 from './../../lib/assets/images/picslide1.jpg';
 	import pic2 from './../../lib/assets/images/picslide2.jpg';
 	import pic3 from './../../lib/assets/images/picslide3.jpg';
@@ -24,7 +22,7 @@
 	import { Role } from '$lib/types/role';
 	import type { Document as CustomDocument } from '$lib/types/document';
 	import Pagination from '$lib/components/Pagination/Pagination.svelte';
-	
+
 	export let data;
 	const { announcements } = data;
 	let PaginationMockitem: string[] = [
@@ -168,7 +166,6 @@
 </script>
 
 <div>
-
 	<div class="relative flex w-full h-[500px]">
 		<button
 			class="absolute left-5 top-1/2 transform -translate-y-1/2 z-10 cursor-pointe transition-all"
