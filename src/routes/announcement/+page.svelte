@@ -42,13 +42,11 @@
 		if (currentIndex == -1) {
 			currentIndex = image.length - 1;
 		}
-		console.log('left click: ' + currentIndex);
 		scrollToImage();
 	}
 
 	function handleRightClick() {
 		currentIndex = (currentIndex + 1) % image.length;
-		console.log('right click: ' + currentIndex);
 		scrollToImage();
 	}
 
@@ -60,9 +58,7 @@
 				left: imageWidth * currentIndex,
 				behavior: 'smooth'
 			});
-		} else {
-			console.log('No image       container found');
-		}
+		} 
 	}
 
 	let paginatedAll: CustomDocument[] = [];
