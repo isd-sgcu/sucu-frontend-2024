@@ -16,6 +16,8 @@
 	import AnnouncementCard from './AnnouncementCard/AnnouncementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
 	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
+	import Pagination from './Pagination/Pagination.svelte';
+	import Footer from './Footer/Footer.svelte';
 
 	modalShow.set(false);
 
@@ -77,6 +79,38 @@
 		'ปี 2565',
 		'ปี 2564',
 		'ปีย้าวยาวววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววว'
+	];
+	let PaginationMockitem: string[] = [
+		'1',
+		'2',
+		'3',
+		'4',
+		'5',
+		'6',
+		'7',
+		'8',
+		'9',
+		'10',
+		'11',
+		'12',
+		'13',
+		'14',
+		'15',
+		'16',
+		'17',
+		'18',
+		'19',
+		'20',
+		'21',
+		'22',
+		'23',
+		'24',
+		'25',
+		'26',
+		'27',
+		'28',
+		'29',
+		'30'
 	];
 
 	const announcementCard = Array(3).fill({
@@ -304,6 +338,12 @@
 		<h2 class="font-bold text-2xl mb-4">Organization Card</h2>
 		<OrganizationCard />
 	</section>
+
+	<section class="section">
+		<h2 class="font-bold text-2xl mb-4">Pagination</h2>
+		<Pagination Arrayitem={PaginationMockitem} />
+	</section>
+	<Footer />
 </div>
 
 <style>
