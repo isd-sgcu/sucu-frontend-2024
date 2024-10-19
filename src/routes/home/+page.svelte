@@ -132,7 +132,7 @@
 		</div>
 		<div
 			bind:this={container}
-			class="flex h-[257px] px-2.5 gap-2.5 overflow-x-auto items-center scrollbar-none snap-x snap-proximity"
+			class="flex h-[257px] px-2.5 gap-2.5 overflow-x-auto items-center scrollbar-none"
 		>
 			{#each mockAnnouncementCard as card}
 				<AnnouncementCard
@@ -141,7 +141,6 @@
 					createdAt={card.createdAt}
 					createdBy={card.createdBy}
 					linkHref={card.linkHref}
-					className="snap-start"
 				/>
 			{/each}
 		</div>
