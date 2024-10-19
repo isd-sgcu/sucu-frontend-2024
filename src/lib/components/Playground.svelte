@@ -343,7 +343,6 @@
 		<h2 class="font-bold text-2xl mb-4">Pagination</h2>
 		<Pagination Arrayitem={PaginationMockitem} />
 	</section>
-	<Footer />
 </div>
 
 <style>
