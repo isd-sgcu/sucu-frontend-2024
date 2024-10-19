@@ -2,7 +2,7 @@
 	import { typography } from '../styles/tailwind/typography';
 	import { cn } from '../lib/utils/cn';
 	import Button from '../lib/components/Button.svelte';
-	import sucuHomeBanner1 from '../lib/assets/images/sucuHomeBanner1.png';
+	import sucuHomeBanner1 from '../lib/assets/images/sucuHomeBanner1.webp';
 	import sucuHomeBanner2 from '../lib/assets/images/sucuHomeBanner2.png';
 	import sucuHomeBanner3 from '../lib/assets/images/sucuHomeBanner3.png';
 	import AnnouncementCard from '$lib/components/AnnouncementCard/AnnouncementCard.svelte';
