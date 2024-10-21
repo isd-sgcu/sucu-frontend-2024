@@ -13,11 +13,10 @@
 	import TabsList from './Tabs/TabsList.svelte';
 	import TabsTrigger from './Tabs/TabsTrigger.svelte';
 	import TabsContent from './Tabs/TabsContent.svelte';
-	import AnnoucementCard from './AnnoucementCard/AnnoucementCard.svelte';
+	import AnnouncementCard from './AnnouncementCard/AnnouncementCard.svelte';
 	import thumbnail from '../assets/images/thumbnail.png';
 	import OrganizationCard from './OrganizationCard/OrganizationCard.svelte';
 	import Pagination from './Pagination/Pagination.svelte';
-	import Footer from './Footer/Footer.svelte';
 
 	modalShow.set(false);
 
@@ -113,7 +112,7 @@
 		'30'
 	];
 
-	const annoucementCard = Array(3).fill({
+	const announcementCard = Array(3).fill({
 		imageURL: thumbnail,
 		title:
 			'ประกาศจุฬาลงกรณ์มหาวิทยาลัย เรื่อง การไปต่างประเทศหรือการเข้ามาในประเทศเพื่อศึกษา อบรม วิจัย หรือปฏิบัติงาน ในสถานการณ์ปัจจุบัน ลงวันที่ 22 พฤศจิกายน 2565',
@@ -122,7 +121,7 @@
 		linkHref: 'https://www.google.com'
 	});
 
-	annoucementCard.push({
+	announcementCard.push({
 		imageURL: '',
 		title: 'ประกาศรับสมัครคณะกรรมาธิการวิสามัญพิจารณางบประมาณสโมสรนิสิตฯ',
 		createdAt: '2024-07-04',
@@ -321,8 +320,8 @@
 		<h2 class="font-bold text-2xl mb-4">Announcement Card</h2>
 
 		<div class="flex gap-6 px-10 pb-10 pt-5 overflow-auto">
-			{#each annoucementCard as card}
-				<AnnoucementCard
+			{#each announcementCard as card}
+				<AnnouncementCard
 					imageURL={card.imageURL}
 					title={card.title}
 					createdAt={card.createdAt}
@@ -343,7 +342,6 @@
 		<h2 class="font-bold text-2xl mb-4">Pagination</h2>
 		<Pagination Arrayitem={PaginationMockitem} />
 	</section>
-	<Footer />
 </div>
 
 <style>
