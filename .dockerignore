@@ -1,0 +1,6 @@
+node_modules
+.git
+.svelte-kit
+.vite
+.pnpm
+.env
